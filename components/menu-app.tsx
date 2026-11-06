@@ -68,7 +68,7 @@ function Home({ onChoose }: { onChoose: (category: CategoryId) => void }) {
             >
               {/* O span agora não tem mais fundo nem borda redonda, apenas a animação de zoom ao passar o mouse */}
               <span className="flex items-center justify-center transition-transform group-hover:scale-110">
-                <img src={Icon} alt={label} className="w-24 h-24 object-contain" />
+                <img src={Icon} alt={label} className="w-30 h-30 object-contain" />
               </span>
               <span className="text-[1.05rem] font-bold tracking-[-0.02em]">{label}</span>
             </button>
