@@ -59,15 +59,16 @@ function Home({ onChoose }: { onChoose: (category: CategoryId) => void }) {
         </div>
 
         <div className="mt-10 grid w-full grid-cols-2 gap-4" aria-label="Categorias do cardápio">
-          {categories.map(({ id, label, image: Icon, color }) => (
+          {categories.map(({ id, label, image: Icon }) => (
             <button
               key={id}
               type="button"
               onClick={() => onChoose(id)}
               className="group flex aspect-square flex-col items-center justify-center gap-4 rounded-2xl bg-white p-5 text-[#4a2e1b] shadow-[0_8px_25px_-12px_rgba(80,45,20,0.42)] ring-1 ring-[#e9ddd1] transition hover:-translate-y-1 hover:shadow-[0_14px_30px_-14px_rgba(80,45,20,0.55)] active:scale-95 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#bd7040]"
             >
-              <span className={`flex size-16 items-center justify-center rounded-full ${color} text-[#bd7040] transition-transform group-hover:scale-105`}>
-                <img src={Icon} alt={label} className="w-10 h-10 object-contain" />
+              {/* O span agora não tem mais fundo nem borda redonda, apenas a animação de zoom ao passar o mouse */}
+              <span className="flex items-center justify-center transition-transform group-hover:scale-110">
+                <img src={Icon} alt={label} className="w-24 h-24 object-contain" />
               </span>
               <span className="text-[1.05rem] font-bold tracking-[-0.02em]">{label}</span>
             </button>
