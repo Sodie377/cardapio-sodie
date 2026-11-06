@@ -53,7 +53,7 @@ function Home({ onChoose }: { onChoose: (category: CategoryId) => void }) {
     <main className="mx-auto flex min-h-dvh w-full max-w-md flex-col px-6 pb-8 pt-12 sm:pt-16">
       <div className="flex flex-1 flex-col items-center">
         <Brand />
-        <div className="mt-4 text-center">
+        <div className="mt-2 text-center">
           <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.22em] text-[#bd7040]">Bem-vindo à nossa doceria</p>
           <h1 className="font-serif text-[2rem] font-bold leading-[1.08] tracking-[-0.035em] text-[#4a2e1b]">Escolha uma categoria<br />para ver o cardápio</h1>
         </div>
