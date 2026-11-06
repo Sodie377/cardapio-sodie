@@ -42,7 +42,7 @@ function Brand() {
       <img 
         src="/logo-sodie.png" 
         alt="Sodiê Doces" 
-        className="w-32 h-auto object-contain"
+        className="w-80 h-auto object-contain"
       />
     </div>
   )
