@@ -14,7 +14,14 @@ import {
   Sparkles,
 } from 'lucide-react'
 
-const pagesBolos = ['/bolos1.jpg', '/bolos2.jpg', '/bolos3.jpg']
+const pagesBolos = [
+  '/bolos1.jpg', '/bolos2.jpg', '/bolos3.jpg', '/bolos4.jpg', '/bolos5.jpg', 
+  '/bolos6.jpg', '/bolos7.jpg', '/bolos8.jpg', '/bolos9.jpg', '/bolos10.jpg', 
+  '/bolos11.jpg', '/bolos12.jpg', '/bolos13.jpg', '/bolos14.jpg', '/bolos15.jpg', 
+  '/bolos16.jpg', '/bolos17.jpg', '/bolos18.jpg', '/bolos19.jpg', '/bolos20.jpg', 
+  '/bolos21.jpg', '/bolos22.jpg', '/bolos23.jpg', '/bolos24.jpg', '/bolos25.jpg', 
+  '/bolos26.jpg'
+]
 const pagesDoces = ['/doces1.jpg', '/doces2.jpg', '/doces3.jpg']
 const pagesSalgados = ['/salgados1.jpg', '/salgados2.jpg', '/salgados3.jpg']
 const pagesBebidas = ['/bebidas1.jpg', '/bebidas2.jpg', '/bebidas3.jpg']
