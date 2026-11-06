@@ -122,9 +122,9 @@ function MenuViewer({ category, onBack }: { category: CategoryId; onBack: () => 
             touchStart.current = null
           }}
         >
-          <div className="relative aspect-[3/4] overflow-hidden rounded-[1.2rem] bg-[#f6eee6]">
+          <div className="relative aspect-[9/16] overflow-hidden rounded-[1.2rem] bg-[#f6eee6]">
             {!imageError ? (
-              <img src={menu.pages[current]} alt={`Página ${current + 1} do ${menu.title}`} className="size-full object-cover" onError={() => setImageError(true)} />
+              <img src={menu.pages[current]} alt={`Página ${current + 1} do ${menu.title}`} className="size-full object-contain" onError={() => setImageError(true)} />
             ) : (
               <div className="flex size-full flex-col items-center justify-center gap-4 px-10 text-center text-[#9c7d68]">
                 <div className="flex size-20 items-center justify-center rounded-full bg-white text-[#bd7040] shadow-sm"><menu.icon size={38} strokeWidth={1.5} aria-hidden="true" /></div>
