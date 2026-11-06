@@ -37,11 +37,13 @@ type CategoryId = keyof typeof menus
 
 function Brand() {
   return (
-    <div className="flex flex-col items-center gap-2" aria-label="Sodiê Doceria">
-      <div className="flex size-20 items-center justify-center rounded-full bg-[#fde1c6] text-[#fffaf4] shadow-[0_10px_30px_-12px_rgba(116,65,31,0.55)]">
-        <CakeSlice size={39} strokeWidth={1.7} aria-hidden="true" />
-      </div>
-      <span className="font-serif text-[2.15rem] font-bold leading-none tracking-[-0.06em] text-[#4a2e1b]">Sodiê</span>
+    <div className="flex flex-col items-center gap-2" aria-label="Sodiê Doces">
+      {/* Altere o nome logo-sodie.png para o nome exato do seu arquivo na pasta public */}
+      <img 
+        src="/logo-sodie.png" 
+        alt="Sodiê Doces" 
+        className="w-32 h-auto object-contain"
+      />
     </div>
   )
 }
