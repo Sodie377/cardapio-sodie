@@ -20,10 +20,10 @@ const pagesSalgados = ['/salgados1.jpg', '/salgados2.jpg', '/salgados3.jpg']
 const pagesBebidas = ['/bebidas1.jpg', '/bebidas2.jpg', '/bebidas3.jpg']
 
 const categories = [
-  { id: 'bolos', label: 'Bolos', icon: CakeSlice, color: 'bg-[#fff1dc]' },
-  { id: 'doces', label: 'Doces', icon: Cookie, color: 'bg-[#fbe7e6]' },
-  { id: 'salgados', label: 'Salgados', icon: Croissant, color: 'bg-[#f8ecd8]' },
-  { id: 'bebidas', label: 'Bebidas', icon: Coffee, color: 'bg-[#e9f0e8]' },
+  { id: 'bolos', label: 'Bolos', image: '/icone-bolos.png', color: 'bg-[#fff1dc]' },
+  { id: 'doces', label: 'Doces', image: '/icone-doces.png', color: 'bg-[#fbe7e6]' },
+  { id: 'salgados', label: 'Salgados', image: '/icone-salgados.png', color: 'bg-[#f8ecd8]' },
+  { id: 'bebidas', label: 'Bebidas', image: '/icone-bebidas.png', color: 'bg-[#e9f0e8]' },
 ] as const
 
 const menus = {
@@ -59,7 +59,7 @@ function Home({ onChoose }: { onChoose: (category: CategoryId) => void }) {
         </div>
 
         <div className="mt-10 grid w-full grid-cols-2 gap-4" aria-label="Categorias do cardápio">
-          {categories.map(({ id, label, icon: Icon, color }) => (
+          {categories.map(({ id, label, image: Icon, color }) => (
             <button
               key={id}
               type="button"
@@ -67,7 +67,7 @@ function Home({ onChoose }: { onChoose: (category: CategoryId) => void }) {
               className="group flex aspect-square flex-col items-center justify-center gap-4 rounded-2xl bg-white p-5 text-[#4a2e1b] shadow-[0_8px_25px_-12px_rgba(80,45,20,0.42)] ring-1 ring-[#e9ddd1] transition hover:-translate-y-1 hover:shadow-[0_14px_30px_-14px_rgba(80,45,20,0.55)] active:scale-95 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#bd7040]"
             >
               <span className={`flex size-16 items-center justify-center rounded-full ${color} text-[#bd7040] transition-transform group-hover:scale-105`}>
-                <Icon size={34} strokeWidth={1.7} aria-hidden="true" />
+                <img src={Icon} alt={label} className="w-10 h-10 object-contain" />
               </span>
               <span className="text-[1.05rem] font-bold tracking-[-0.02em]">{label}</span>
             </button>
