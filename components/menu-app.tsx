@@ -45,7 +45,6 @@ type CategoryId = keyof typeof menus
 function Brand() {
   return (
     <div className="flex flex-col items-center gap-2" aria-label="Sodiê Doces">
-      {/* Altere o nome logo-sodie.png para o nome exato do seu arquivo na pasta public */}
       <img 
         src="/logo-sodie.png" 
         alt="Sodiê Doces" 
@@ -73,7 +72,6 @@ function Home({ onChoose }: { onChoose: (category: CategoryId) => void }) {
               onClick={() => onChoose(id)}
               className="group flex aspect-square flex-col items-center justify-center gap-4 rounded-2xl bg-white p-5 text-[#4a2e1b] shadow-[0_8px_25px_-12px_rgba(80,45,20,0.42)] ring-1 ring-[#e9ddd1] transition hover:-translate-y-1 hover:shadow-[0_14px_30px_-14px_rgba(80,45,20,0.55)] active:scale-95 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#bd7040]"
             >
-              {/* O span agora não tem mais fundo nem borda redonda, apenas a animação de zoom ao passar o mouse */}
               <span className="flex items-center justify-center transition-transform group-hover:scale-110">
                 <img src={Icon} alt={label} className="w-30 h-30 object-contain" />
               </span>
@@ -99,48 +97,76 @@ function MenuViewer({ category, onBack }: { category: CategoryId; onBack: () => 
   }
 
   return (
-    <main className="mx-auto flex min-h-dvh w-full max-w-2xl flex-col px-5 pb-8 pt-6 sm:px-8 sm:pt-8">
-      <header className="flex items-center gap-4">
-        <button type="button" onClick={onBack} className="flex size-11 shrink-0 items-center justify-center rounded-full bg-white text-[#4a2e1b] shadow-sm ring-1 ring-[#eaded3] transition hover:bg-[#fffaf4] active:scale-95 focus-visible:outline-2 focus-visible:outline-[#bd7040]" aria-label="Voltar para categorias">
-          <ArrowLeft size={20} aria-hidden="true" />
-        </button>
-        <div className="min-w-0">
-          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#bd7040]">Sodiê Doceria</p>
-          <h1 className="truncate font-serif text-2xl font-bold tracking-[-0.035em] text-[#4a2e1b]">{menu.title}</h1>
-        </div>
-      </header>
+    <main className="fixed inset-0 z-50 flex h-dvh w-full flex-col bg-[#f7f1eb]">
+      {/* Botão de voltar flutuante */}
+      <button
+        type="button"
+        onClick={onBack}
+        className="absolute left-4 top-4 z-50 flex size-12 items-center justify-center rounded-full bg-white/90 text-[#4a2e1b] shadow-md backdrop-blur-sm transition hover:bg-white active:scale-95"
+        aria-label="Voltar para categorias"
+      >
+        <ArrowLeft size={24} aria-hidden="true" />
+      </button>
 
-      <section className="flex flex-1 flex-col items-center justify-center py-8">
-        <div className="mb-5 flex items-center gap-2 text-sm font-medium text-[#9c7d68]"><Sparkles size={15} aria-hidden="true" />{menu.eyebrow}</div>
-        <div
-          className="relative w-full max-w-[510px] overflow-hidden rounded-[1.65rem] bg-white p-2 shadow-[0_15px_40px_-18px_rgba(80,45,20,0.5)] ring-1 ring-[#e9ddd1]"
-          onTouchStart={(event) => { touchStart.current = event.changedTouches[0]?.clientX ?? null }}
-          onTouchEnd={(event) => {
-            if (touchStart.current === null) return
-            const distance = event.changedTouches[0]?.clientX - touchStart.current
-            if (Math.abs(distance) > 45) move(distance < 0 ? 1 : -1)
-            touchStart.current = null
-          }}
-        >
-          <div className="relative aspect-[9/16] overflow-hidden rounded-[1.2rem] bg-[#f6eee6]">
-            {!imageError ? (
-              <img src={menu.pages[current]} alt={`Página ${current + 1} do ${menu.title}`} className="size-full object-contain" onError={() => setImageError(true)} />
-            ) : (
-              <div className="flex size-full flex-col items-center justify-center gap-4 px-10 text-center text-[#9c7d68]">
-                <div className="flex size-20 items-center justify-center rounded-full bg-white text-[#bd7040] shadow-sm"><menu.icon size={38} strokeWidth={1.5} aria-hidden="true" /></div>
-                <div><p className="font-serif text-2xl font-bold text-[#4a2e1b]">Sua página de {category}</p><p className="mt-2 text-sm leading-relaxed">Adicione sua imagem em <code className="rounded bg-white px-1.5 py-0.5 text-xs">public/{category}1.jpg</code></p></div>
-              </div>
-            )}
-            <div className="pointer-events-none absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-black/10 to-transparent" />
-            <button type="button" onClick={() => move(-1)} className="absolute left-3 top-1/2 flex size-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-[#4a2e1b] shadow-md backdrop-blur-sm transition hover:bg-white active:scale-90" aria-label="Página anterior"><ArrowLeft size={18} aria-hidden="true" /></button>
-            <button type="button" onClick={() => move(1)} className="absolute right-3 top-1/2 flex size-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-[#4a2e1b] shadow-md backdrop-blur-sm transition hover:bg-white active:scale-90" aria-label="Próxima página"><ArrowRight size={18} aria-hidden="true" /></button>
+      {/* Container da imagem em tela cheia (Sem textos em cima) */}
+      <section
+        className="relative flex flex-1 items-center justify-center overflow-hidden bg-[#f7f1eb]"
+        onTouchStart={(event) => { touchStart.current = event.changedTouches[0]?.clientX ?? null }}
+        onTouchEnd={(event) => {
+          if (touchStart.current === null) return
+          const distance = event.changedTouches[0]?.clientX - touchStart.current
+          if (Math.abs(distance) > 45) move(distance < 0 ? 1 : -1)
+          touchStart.current = null
+        }}
+      >
+        {!imageError ? (
+          <img
+            src={menu.pages[current]}
+            alt={`Página ${current + 1} do ${menu.title}`}
+            className="h-full w-full object-contain"
+            onError={() => setImageError(true)}
+          />
+        ) : (
+          <div className="flex flex-col items-center justify-center gap-4 text-[#9c7d68]">
+            <div className="flex size-20 items-center justify-center rounded-full bg-white text-[#bd7040] shadow-sm">
+              <menu.icon size={38} strokeWidth={1.5} aria-hidden="true" />
+            </div>
+            <p>Imagem não encontrada</p>
           </div>
-        </div>
-        <div className="mt-6 flex items-center gap-2" role="tablist" aria-label="Páginas do cardápio">
-          {menu.pages.map((_, index) => <button key={index} type="button" onClick={() => { setCurrent(index); setImageError(false) }} className={`rounded-full transition-all ${index === current ? 'h-2.5 w-7 bg-[#bd7040]' : 'size-2.5 bg-[#dbc3b1] hover:bg-[#bd7040]'}`} aria-label={`Ir para página ${index + 1}`} aria-selected={index === current} role="tab" />)}
-        </div>
-        <p className="mt-3 text-xs font-medium text-[#9c7d68]">Arraste para os lados ou use as setas</p>
+        )}
+
+        {/* Setas de navegação laterais flutuantes */}
+        <button
+          type="button"
+          onClick={() => move(-1)}
+          className="absolute left-4 top-1/2 flex size-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-[#4a2e1b] shadow-md backdrop-blur-sm transition hover:bg-white active:scale-90"
+          aria-label="Página anterior"
+        >
+          <ArrowLeft size={24} aria-hidden="true" />
+        </button>
+
+        <button
+          type="button"
+          onClick={() => move(1)}
+          className="absolute right-4 top-1/2 flex size-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-[#4a2e1b] shadow-md backdrop-blur-sm transition hover:bg-white active:scale-90"
+          aria-label="Próxima página"
+        >
+          <ArrowRight size={24} aria-hidden="true" />
+        </button>
       </section>
+
+      {/* Bolinhas de navegação flutuantes na parte inferior */}
+      <div className="absolute bottom-6 left-0 right-0 flex items-center justify-center gap-2" role="tablist">
+        {menu.pages.map((_, index) => (
+          <button
+            key={index}
+            type="button"
+            onClick={() => { setCurrent(index); setImageError(false) }}
+            className={`rounded-full shadow-sm transition-all ${index === current ? 'h-2.5 w-7 bg-[#bd7040]' : 'size-2.5 bg-[#dbc3b1] hover:bg-[#bd7040]'}`}
+            aria-label={`Ir para página ${index + 1}`}
+          />
+        ))}
+      </div>
     </main>
   )
 }
