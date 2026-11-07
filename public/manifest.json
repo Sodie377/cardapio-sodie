@@ -1,0 +1,15 @@
+{
+  "name": "Cardápio Sodiê",
+  "short_name": "Sodiê",
+  "display": "fullscreen", 
+  "background_color": "#f7f1eb",
+  "theme_color": "#f7f1eb",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/logo-sodie.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

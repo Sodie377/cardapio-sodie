@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: 'Sodiê | Cardápio',
   description: 'Explore o cardápio da Sodiê Doceria.',
   generator: 'v0.app',
+  manifest: '/manifest.json', // <-- COLOQUE ESTA LINHA AQUI
   icons: {
     icon: [
       {
