@@ -23,7 +23,6 @@ const pagesBolos = [
   '/bolos21.jpg', '/bolos22.jpg', '/bolos23.jpg', '/bolos24.jpg', '/bolos25.jpg', 
   '/bolos26.jpg'
 ]
-const pagesSalgados = ['/salgados1.jpg', '/salgados2.jpg', '/salgados3.jpg']
 const pagesBebidas = ['/bebidas1.jpg', '/bebidas2.jpg', '/bebidas3.jpg']
 
 // ==========================================
@@ -82,6 +81,36 @@ const docesList = [
 ]
 
 // ==========================================
+// 3. DADOS DA GALERIA DE SALGADOS (SEM FILTROS)
+// ==========================================
+// Array vazio desativa os botões de filtro na tela
+const salgadosCategories: string[] = [] 
+
+const salgadosList = [
+  // GRANDES
+  { id: 'g1', name: 'Esfiha de Calabresa c/ Requeijão', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/04/18105538/Esfiha_calabresa_611x497.png', category: 'Grande', description: 'Calabresa + requeijão = sabor de montão. Massa leve, a base de farinha de trigo, leite integral e margarina, recheio de calabresa fatiada, requeijão cremoso e temperos.' },
+  { id: 'g2', name: 'Esfiha de Frango c/ Requeijão', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2021/11/18101219/Esfiha_frango_requeijao_255x207.png', category: 'Grande', description: 'Massa leve, com recheio de frango desfiado, temperos especiais e requeijão cremoso.' },
+  { id: 'g3', name: 'Esfiha de Carne', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2021/10/18101138/Esfiha_carne_611x497-1.png', category: 'Grande', description: 'Massa leve, com recheio de carne e temperos especiais. INGREDIENTES: farinha de trigo enriquecida, carne bovina, leite integral, cebola, tomate, margarina, óleo de soja, gema pasteurizada, sal, açúcar, alho, fermento biológico e especiarias.' },
+  { id: 'g4', name: 'Coxinha de Frango c/ Requeijão', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2021/08/18095027/IMG_4140-1.png', category: 'Grande', description: 'Massa macia e levemente temperada, com recheio de frango desfiado, temperos especiais e requeijão cremoso. INGREDIENTES: farinha de trigo enriquecida, frango, requeijão, leite integral, farinha de rosca, flocos de batata, margarina, amido modificado, óleo de soja, óleo de algodão, sal e especiarias.' },
+  { id: 'g5', name: 'Kibe com Requeijão', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2021/11/18101319/IMG_4165.png', category: 'Grande', description: 'Massa deliciosamente temperada com carne de alta qualidade e recheio de requeijão cremoso.' },
+  { id: 'g6', name: 'Quiche de Alho-Poró', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2021/10/18103323/IMG_5221-1.png', category: 'Grande', description: 'Massa leve e crocante, com recheio temperado de alho-poró em corte finos e creme suave. INGREDIENTES: creme de leite, farinha de trigo enriquecida, alho poró, margarina, ovo pasteurizado, queijo parmesão, azeite, sal e especiarias.' },
+  { id: 'g7', name: 'Quiche de Camarão', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/04/18153117/IMG_5225.png', category: 'Grande', description: 'Experimente a sofisticação da nossa quiche de camarão. Viva uma experiência gourmet que vai conquistar os paladares mais exigentes.' },
+  { id: 'g8', name: 'Quiche de Frango', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/04/18154003/IMG_5222.png', category: 'Grande', description: 'Massa crocante, recheio cremoso de frango suculento e temperos aromáticos. Saboreie essa combinação perfeita de texturas e sabores.' },
+  { id: 'g9', name: 'Quiche 4 Queijos', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/04/18154621/IMG_5220-1.png', category: 'Grande', description: 'Quatro vezes deliciosa e infinitamente irresistível. Massa leve e crocante, com recheio de queijo muçarela, provolone, gorgonzola, parmesão, e um creme suave a base de creme de leite.' },
+  { id: 'g10', name: 'Quiche Brócolis c/ Bacon', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/04/18152813/IMG_5228.png', category: 'Grande', description: 'Aproveite a combinação perfeita de sabores na nossa quiche de brócolis com bacon. Cada mordida é uma explosão de texturas e sabores que vão encantar seu paladar. ' },
+
+  // MINIS
+  { id: 'm1', name: 'Mini Bolinha de Queijo', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2021/11/25112522/bolinha_requeijao_615x500px-min-1-e1637350892502.png', category: 'Mini', description: 'Massa macia e levemente temperada, com recheio de queijo muçarela.' },
+  { id: 'm2', name: 'Mini Coxinha Frango c/ Requeijão', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2021/11/25112521/mini_coxinha_frango_com_requeijao_615x500px-min-1-e1637353545512.png', category: 'Mini', description: 'Massa macia e levemente temperada, recheio de frango desfiado com temperos especiais e requeijão cremoso.' },
+  { id: 'm3', name: 'Mini Coxinha de Frango', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2021/11/25112502/mini_coxinha_615x500px-min-e1637686352827.png', category: 'Mini', description: 'Massa macia e levemente temperada, recheio de frango desfiado com temperos especiais.' },
+  { id: 'm4', name: 'Mini Coxinha de Carne c/ Requeijão', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2026/08/31101638/CoxinhaDeCarneRequeijao_site.png', category: 'Mini', description: 'Massa macia e levemente temperada, recheio de carne moída com temperos especiais e requeijão cremoso.' },
+  { id: 'm5', name: 'Mini Pastel Frango c/ Requeijão', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2021/11/18101902/IMG_4457.png', category: 'Mini', description: 'Massa assada, recheio de frango desfiado com temperos especiais e requeijão cremoso.' },
+  { id: 'm6', name: 'Mini Travesseirinho Presunto e Queijo', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2025/12/30163541/mini-travesseiro-de-presunto-e-queijo_destaque.png', category: 'Mini', description: 'Massa macia e levemente temperada, com recheio de presunto e queijo muçarela.' },
+  { id: 'm7', name: 'Mini Kibe com Requeijão', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/04/18112446/IMG_1992-1.png', category: 'Mini', description: 'Explore uma explosão de sabores com nosso Mini Kibe de Requeijão! Feito com uma suculenta massa à base de carne bovina e trigo para kibe, este petisco deliciosamente crocante tem um irresistível toque de hortelã com recheio de requeijão cremoso.' },
+  { id: 'm8', name: 'Mini Kibe Tradicional', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2021/10/18101628/IMG_4566-1.png', category: 'Mini', description: 'Massa deliciosamente temperada com carne de alta qualidade. INGREDIENTES: trigo para kibe, carne bovina, cebola, hortelã, alho, óleo de algodão, sal e especiarias.' },
+]
+
+// ==========================================
 // CONFIGURAÇÃO GERAL
 // ==========================================
 const categories = [
@@ -93,7 +122,6 @@ const categories = [
 
 const menus = {
   bolos: { title: 'Cardápio de Bolos', pages: pagesBolos, eyebrow: 'Feitos para celebrar', icon: CakeSlice },
-  salgados: { title: 'Cardápio de Salgados', pages: pagesSalgados, eyebrow: 'Sabor em cada mordida', icon: Croissant },
   bebidas: { title: 'Cardápio de Bebidas', pages: pagesBebidas, eyebrow: 'Para acompanhar seu momento', icon: Coffee },
 } as const
 
@@ -140,16 +168,27 @@ function Home({ onChoose }: { onChoose: (category: CategoryId) => void }) {
   )
 }
 
-// NOVA TELA DE DOCES (CARDS, FILTROS E DESCRIÇÃO FLUTUANTE)
-function DocesViewer({ onBack }: { onBack: () => void }) {
+// NOVA TELA DE GALERIA UNIFICADA (DOCES E SALGADOS)
+function GalleryViewer({ 
+  title, 
+  filterList, 
+  items, 
+  onBack 
+}: { 
+  title: string, 
+  filterList: string[], 
+  items: any[], 
+  onBack: () => void 
+}) {
   const [activeCat, setActiveCat] = useState('Todos')
-  const [selectedDoce, setSelectedDoce] = useState<typeof docesList[0] | null>(null)
+  const [selectedItem, setSelectedItem] = useState<any | null>(null)
   
-  const filteredDoces = activeCat === 'Todos' ? docesList : docesList.filter(d => d.category === activeCat)
+  const filteredItems = (filterList.length === 0 || activeCat === 'Todos') 
+    ? items 
+    : items.filter(d => d.category === activeCat)
 
   return (
     <main className="min-h-dvh w-full bg-[#f7f1eb] flex flex-col pb-12 relative">
-      {/* Cabeçalho */}
       <header className="relative bg-white shadow-sm py-8 px-4 flex flex-col items-center">
         <button
           type="button"
@@ -159,56 +198,54 @@ function DocesViewer({ onBack }: { onBack: () => void }) {
           <ArrowLeft size={24} aria-hidden="true" />
         </button>
         
-        <h2 className="text-[#4a2e1b] font-serif text-2xl font-bold mb-6 mt-2 tracking-[-0.03em]">Selecione a categoria</h2>
+        <h2 className="text-[#4a2e1b] font-serif text-2xl font-bold mb-6 mt-2 tracking-[-0.03em]">{title}</h2>
         
-        <div className="flex flex-wrap justify-center max-w-4xl border border-[#4a2e1b] rounded-lg overflow-hidden shadow-sm">
-          {docesCategories.map(cat => (
-            <button 
-              key={cat}
-              onClick={() => setActiveCat(cat)}
-              className={`px-5 py-2.5 text-sm font-semibold transition-colors border-r border-[#4a2e1b] last:border-r-0
-                ${activeCat === cat ? 'bg-[#4a2e1b] text-white' : 'bg-white text-[#4a2e1b] hover:bg-[#f4ebe1]'}`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
+        {filterList.length > 0 && (
+          <div className="flex flex-wrap justify-center max-w-4xl border border-[#4a2e1b] rounded-lg overflow-hidden shadow-sm">
+            {filterList.map(cat => (
+              <button 
+                key={cat}
+                onClick={() => setActiveCat(cat)}
+                className={`px-5 py-2.5 text-sm font-semibold transition-colors border-r border-[#4a2e1b] last:border-r-0
+                  ${activeCat === cat ? 'bg-[#4a2e1b] text-white' : 'bg-white text-[#4a2e1b] hover:bg-[#f4ebe1]'}`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+        )}
       </header>
 
-      {/* Grid de Cards dos Doces */}
       <div className="px-6 mt-10 max-w-6xl mx-auto w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {filteredDoces.map(doce => (
+        {filteredItems.map(item => (
           <button 
-            key={doce.id} 
-            onClick={() => setSelectedDoce(doce)}
+            key={item.id} 
+            onClick={() => setSelectedItem(item)}
             className="bg-white rounded-2xl p-6 flex flex-col items-center justify-between text-center shadow-sm border border-[#e9ddd1] transition hover:-translate-y-1 hover:shadow-md cursor-pointer w-full"
           >
-            <img src={doce.image} className="w-32 h-32 object-contain mb-4 drop-shadow-sm" alt={doce.name} />
-            <h3 className="text-[#4a2e1b] font-bold text-[1.1rem] leading-tight">{doce.name}</h3>
+            <img src={item.image} className="w-32 h-32 object-contain mb-4 drop-shadow-sm" alt={item.name} />
+            <h3 className="text-[#4a2e1b] font-bold text-[1.1rem] leading-tight">{item.name}</h3>
           </button>
         ))}
       </div>
 
       {/* JANELA FLUTUANTE (MODAL DE DESCRIÇÃO) */}
-      {selectedDoce && (
+      {selectedItem && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/40 backdrop-blur-sm p-5 transition-opacity">
           <div className="relative w-full max-w-sm bg-white rounded-[2rem] p-8 shadow-2xl flex flex-col items-center text-center animate-in fade-in zoom-in-95 duration-200">
-            {/* Botão de Fechar no Modal */}
             <button
-              onClick={() => setSelectedDoce(null)}
+              onClick={() => setSelectedItem(null)}
               className="absolute right-4 top-4 flex size-10 items-center justify-center rounded-full bg-[#f7f1eb] text-[#4a2e1b] transition hover:bg-[#e9ddd1]"
               aria-label="Fechar descrição"
             >
               <X size={20} aria-hidden="true" />
             </button>
-
-            {/* Conteúdo do Modal */}
-            <img src={selectedDoce.image} alt={selectedDoce.name} className="w-48 h-48 object-contain drop-shadow-md mb-4" />
+            <img src={selectedItem.image} alt={selectedItem.name} className="w-48 h-48 object-contain drop-shadow-md mb-4" />
             <span className="inline-block mb-3 px-3 py-1 bg-[#fff1dc] text-[#bd7040] text-[10px] font-bold uppercase tracking-widest rounded-full">
-              {selectedDoce.category}
+              {selectedItem.category}
             </span>
-            <h3 className="font-serif text-2xl font-bold text-[#4a2e1b] mb-3 leading-tight">{selectedDoce.name}</h3>
-            <p className="text-[#9c7d68] text-sm leading-relaxed">{selectedDoce.description}</p>
+            <h3 className="font-serif text-2xl font-bold text-[#4a2e1b] mb-3 leading-tight">{selectedItem.name}</h3>
+            <p className="text-[#9c7d68] text-sm leading-relaxed">{selectedItem.description}</p>
           </div>
         </div>
       )}
@@ -216,8 +253,8 @@ function DocesViewer({ onBack }: { onBack: () => void }) {
   )
 }
 
-// TELA CHEIA (PARA BOLOS, SALGADOS E BEBIDAS)
-function MenuViewer({ category, onBack }: { category: 'bolos' | 'salgados' | 'bebidas'; onBack: () => void }) {
+// TELA CHEIA (PARA BOLOS E BEBIDAS)
+function MenuViewer({ category, onBack }: { category: 'bolos' | 'bebidas'; onBack: () => void }) {
   const menu = menus[category]
   const [current, setCurrent] = useState(0)
   const [imageError, setImageError] = useState(false)
@@ -304,7 +341,8 @@ export default function MenuApp() {
   
   if (!category) return <Home onChoose={setCategory} />
   
-  if (category === 'doces') return <DocesViewer onBack={() => setCategory(null)} />
+  if (category === 'doces') return <GalleryViewer title="Selecione a categoria" filterList={docesCategories} items={docesList} onBack={() => setCategory(null)} />
+  if (category === 'salgados') return <GalleryViewer title="Nossos Salgados" filterList={salgadosCategories} items={salgadosList} onBack={() => setCategory(null)} />
   
   return <MenuViewer category={category} onBack={() => setCategory(null)} />
 }
