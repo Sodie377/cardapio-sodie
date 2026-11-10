@@ -9,6 +9,7 @@ import {
   Croissant,
   Cookie,
   Sparkles,
+  X,
 } from 'lucide-react'
 
 // ==========================================
@@ -26,58 +27,58 @@ const pagesSalgados = ['/salgados1.jpg', '/salgados2.jpg', '/salgados3.jpg']
 const pagesBebidas = ['/bebidas1.jpg', '/bebidas2.jpg', '/bebidas3.jpg']
 
 // ==========================================
-// DADOS DA TELA DE DOCES (EXTRAÍDOS DO SITE OFICIAL)
+// DADOS DA TELA DE DOCES COM DESCRIÇÕES
 // ==========================================
 const docesCategories = ['Todos', 'Tradicionais', 'Finos', 'Belgas', 'Bombom', 'Zero Açúcar', 'NUTELLA®']
 
 const docesList = [
   // TRADICIONAIS
-  { id: 't1', name: 'Beijinho', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2021/11/26110736/beijinho_246x200px.png', category: 'Tradicionais' },
-  { id: 't2', name: 'Brigadeiro', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2021/11/26110738/brigadeiro_246x200px.png', category: 'Tradicionais' },
-  { id: 't3', name: 'Cajuzinho', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2021/11/26110741/cajuzinho_246x200px.png', category: 'Tradicionais' },
-  { id: 't4', name: 'Casadinho', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2021/11/26110737/bem-casado_246x200px.png', category: 'Tradicionais' },
-  { id: 't5', name: 'Olho de Sogra', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2021/11/26110744/olho_de_sogro_246x200px.png', category: 'Tradicionais' },
-  { id: 't6', name: 'Brigadeiro de Morango', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2021/11/26110740/brigadeiro_de_morango_246x200px.png', category: 'Tradicionais' },
+  { id: 't1', name: 'Beijinho', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2021/11/26110736/beijinho_246x200px.png', category: 'Tradicionais', description: 'O clássico docinho de festa feito com leite condensado e muito coco ralado.' },
+  { id: 't2', name: 'Brigadeiro', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2021/11/26110738/brigadeiro_246x200px.png', category: 'Tradicionais', description: 'Nosso tradicional brigadeiro de panela, macio e coberto com granulado de chocolate.' },
+  { id: 't3', name: 'Cajuzinho', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2021/11/26110741/cajuzinho_246x200px.png', category: 'Tradicionais', description: 'Mistura perfeita de amendoim torrado, cacau e leite condensado, envolto em açúcar.' },
+  { id: 't4', name: 'Casadinho', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2021/11/26110737/bem-casado_246x200px.png', category: 'Tradicionais', description: 'A união apaixonante e equilibrada do brigadeiro branco com o brigadeiro escuro.' },
+  { id: 't5', name: 'Olho de Sogra', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2021/11/26110744/olho_de_sogro_246x200px.png', category: 'Tradicionais', description: 'Beijinho cremoso abraçado por uma suculenta ameixa preta.' },
+  { id: 't6', name: 'Brigadeiro de Morango', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2021/11/26110740/brigadeiro_de_morango_246x200px.png', category: 'Tradicionais', description: 'Também conhecido como bicho-de-pé, um docinho rosa com delicioso sabor de morango.' },
 
   // FINOS
-  { id: 'f1', name: 'Trufinha de Chocolate com Cereja', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2021/11/26092101/trufado_c_cereja_246x200px.png', category: 'Finos' },
-  { id: 'f2', name: 'Trufinha de Brigadeiro', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2021/11/26092059/brigadeira_246x200px.png', category: 'Finos' },
-  { id: 'f3', name: 'Trufinha Branco e Preto', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2021/11/26092102/trufado_preto_branco_246x200px.png', category: 'Finos' },
-  { id: 'f4', name: 'Trufinha de Leite Ninho® com Avelã', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2021/11/26092100/ninho_c_avela_246x200px.png', category: 'Finos' },
-  { id: 'f5', name: 'Trufinha de Limão', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2021/11/26092059/limao_246x200px.png', category: 'Finos' },
-  { id: 'f6', name: 'Trufinha Pimenta com Abacaxi', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2021/11/26092058/abacaxi_c_geleia_pimenta_246x200px.png', category: 'Finos' },
-  { id: 'f7', name: 'Trufinha de Avelã', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2021/11/26092059/avela_246x200px.png', category: 'Finos' },
-  { id: 'f8', name: 'Trufinha Branco com Damasco', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2021/11/28112407/trufado_com_damasco_246x200px-1.png', category: 'Finos' },
-  { id: 'f9', name: 'Trufinha de Maracujá', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2021/11/26092100/maracuja_246x200px.png', category: 'Finos' },
-  { id: 'f10', name: 'Camafêu de Nozes ao Leite', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2022/10/28111431/Camafeu_de_Nozes_no_Chocolate_ao_Leite_246x200px.png', category: 'Finos' },
-  { id: 'f11', name: 'Camafêu de Nozes Branco', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2021/11/28140144/Camafeu_de_Nozes_no_Chocolate_ao_branco_246x200px.png', category: 'Finos' },
+  { id: 'f1', name: 'Trufinha de Chocolate com Cereja', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2021/11/26092101/trufado_c_cereja_246x200px.png', category: 'Finos', description: 'Trufa cremosa de chocolate recheada com uma cereja inteira.' },
+  { id: 'f2', name: 'Trufinha de Brigadeiro', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2021/11/26092059/brigadeira_246x200px.png', category: 'Finos', description: 'Massa cremosa de trufa com sabor intenso do nosso brigadeiro especial.' },
+  { id: 'f3', name: 'Trufinha Branco e Preto', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2021/11/26092102/trufado_preto_branco_246x200px.png', category: 'Finos', description: 'A combinação perfeita de trufa de chocolate branco e chocolate ao leite.' },
+  { id: 'f4', name: 'Trufinha de Leite Ninho® com Avelã', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2021/11/26092100/ninho_c_avela_246x200px.png', category: 'Finos', description: 'Creme de Leite Ninho® autêntico com pedaços crocantes de avelã.' },
+  { id: 'f5', name: 'Trufinha de Limão', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2021/11/26092059/limao_246x200px.png', category: 'Finos', description: 'Trufa refrescante com um toque azedinho e suave de limão.' },
+  { id: 'f6', name: 'Trufinha Pimenta com Abacaxi', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2021/11/26092058/abacaxi_c_geleia_pimenta_246x200px.png', category: 'Finos', description: 'Combinação exótica de trufa doce com o contraste do abacaxi e geleia de pimenta.' },
+  { id: 'f7', name: 'Trufinha de Avelã', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2021/11/26092059/avela_246x200px.png', category: 'Finos', description: 'Trufa derretida na boca com sabor rico e marcante de avelã.' },
+  { id: 'f8', name: 'Trufinha Branco com Damasco', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2021/11/28112407/trufado_com_damasco_246x200px-1.png', category: 'Finos', description: 'Chocolate branco cremoso recheado com geleia premium de damasco.' },
+  { id: 'f9', name: 'Trufinha de Maracujá', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2021/11/26092100/maracuja_246x200px.png', category: 'Finos', description: 'O equilíbrio perfeito entre o doce do chocolate e o azedinho do maracujá.' },
+  { id: 'f10', name: 'Camafêu de Nozes ao Leite', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2022/10/28111431/Camafeu_de_Nozes_no_Chocolate_ao_Leite_246x200px.png', category: 'Finos', description: 'Massa especial de nozes banhada em delicioso chocolate ao leite.' },
+  { id: 'f11', name: 'Camafêu de Nozes Branco', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2021/11/28140144/Camafeu_de_Nozes_no_Chocolate_ao_branco_246x200px.png', category: 'Finos', description: 'Massa especial de nozes fondada e banhada em chocolate branco.' },
 
   // BELGAS
-  { id: 'be1', name: 'Brigadeiro Leite Ninho® com Avelã', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2022/10/28145226/ninho-com-avela_246x200px.png', category: 'Belgas' },
-  { id: 'be2', name: 'Brigadeiro de Pistache', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2022/10/28145226/pistache_246x200px.png', category: 'Belgas' },
-  { id: 'be3', name: 'Brigadeiro de Café', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2022/10/28145224/cafe_246x200px.png', category: 'Belgas' },
-  { id: 'be4', name: 'Brigadeiro Intenso', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2022/10/28145225/intenso_246x200px.png', category: 'Belgas' },
-  { id: 'be5', name: 'Brigadeiro de Frutas Vermelhas', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2022/10/28145225/frutas-vermelhas_246x200px.png', category: 'Belgas' },
-  { id: 'be6', name: 'Brigadeiro de Churros', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2022/10/28145224/churros_246x200px.png', category: 'Belgas' },
-  { id: 'be7', name: 'Brigadeiro Ao Leite', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2022/10/28145227/ao-leite_246x200px.png', category: 'Belgas' },
+  { id: 'be1', name: 'Brigadeiro Leite Ninho® com Avelã', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2022/10/28145226/ninho-com-avela_246x200px.png', category: 'Belgas', description: 'Brigadeiro gourmet feito com chocolate belga, Leite Ninho® e avelãs.' },
+  { id: 'be2', name: 'Brigadeiro de Pistache', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2022/10/28145226/pistache_246x200px.png', category: 'Belgas', description: 'Brigadeiro gourmet de chocolate belga envolto em pedaços de pistache crocante.' },
+  { id: 'be3', name: 'Brigadeiro de Café', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2022/10/28145224/cafe_246x200px.png', category: 'Belgas', description: 'Sabor sofisticado de café espresso unido à cremosidade do chocolate belga.' },
+  { id: 'be4', name: 'Brigadeiro Intenso', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2022/10/28145225/intenso_246x200px.png', category: 'Belgas', description: 'Para os amantes de cacau: brigadeiro feito com chocolate belga meio amargo.' },
+  { id: 'be5', name: 'Brigadeiro de Frutas Vermelhas', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2022/10/28145225/frutas-vermelhas_246x200px.png', category: 'Belgas', description: 'Brigadeiro gourmet de chocolate belga com um toque cítrico de frutas vermelhas.' },
+  { id: 'be6', name: 'Brigadeiro de Churros', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2022/10/28145224/churros_246x200px.png', category: 'Belgas', description: 'Brigadeiro de doce de leite envolto em açúcar e canela, recheado de puro sabor.' },
+  { id: 'be7', name: 'Brigadeiro Ao Leite', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2022/10/28145227/ao-leite_246x200px.png', category: 'Belgas', description: 'A perfeição do brigadeiro clássico elevada com o autêntico chocolate ao leite belga.' },
 
   // BOMBOM
-  { id: 'b1', name: 'Bombom Brigadeiro com Cereja', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2022/10/28111432/bombom_de_brigadeiro-cereja_246x200px.png', category: 'Bombom' },
-  { id: 'b2', name: 'Bombom de Brigadeiro', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2022/10/28111445/bombom_de_Brigadeiro_615x500px.png', category: 'Bombom' },
-  { id: 'b3', name: 'Bombom de Maracujá', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2022/10/28111430/bombom_de_maracuja_246x200px.png', category: 'Bombom' },
-  { id: 'b4', name: 'Bombom de Café', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2021/11/28140144/bombom_de_cafe_246x200px.png', category: 'Bombom' },
-  { id: 'b5', name: 'Bombom de Limão', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2022/10/28111429/bombom_de_limao_246x200px.png', category: 'Bombom' },
-  { id: 'b6', name: 'Bombom de Coco', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2022/10/28111433/bombom_de_coco_246x200px.png', category: 'Bombom' },
+  { id: 'b1', name: 'Bombom Brigadeiro com Cereja', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2022/10/28111432/bombom_de_brigadeiro-cereja_246x200px.png', category: 'Bombom', description: 'Casquinha de chocolate ao leite escondendo um brigadeiro cremoso e uma cereja.' },
+  { id: 'b2', name: 'Bombom de Brigadeiro', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2022/10/28111445/bombom_de_Brigadeiro_615x500px.png', category: 'Bombom', description: 'Crocante por fora e recheado com o clássico brigadeiro mole por dentro.' },
+  { id: 'b3', name: 'Bombom de Maracujá', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2022/10/28111430/bombom_de_maracuja_246x200px.png', category: 'Bombom', description: 'Casquinha de chocolate recheada com um delicioso creme de maracujá.' },
+  { id: 'b4', name: 'Bombom de Café', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2021/11/28140144/bombom_de_cafe_246x200px.png', category: 'Bombom', description: 'Casquinha de chocolate ao leite recheada com um suave creme sabor café.' },
+  { id: 'b5', name: 'Bombom de Limão', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2022/10/28111429/bombom_de_limao_246x200px.png', category: 'Bombom', description: 'Casquinha de chocolate recheada com mousse leve e refrescante de limão.' },
+  { id: 'b6', name: 'Bombom de Coco', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2022/10/28111433/bombom_de_coco_246x200px.png', category: 'Bombom', description: 'Casquinha crocante de chocolate ao leite envolvendo um recheio de beijinho.' },
 
   // ZERO AÇÚCAR
-  { id: 'z1', name: 'Brigadeiro Sabor Morango', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2023/09/22110154/doce_3_246x200px.png', category: 'Zero Açúcar' },
-  { id: 'z2', name: 'Beijinho Zero Açúcar', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2023/09/29160750/doce_2_246x200px.png', category: 'Zero Açúcar' },
-  { id: 'z3', name: 'Brigadeiro Zero Açúcar', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2023/09/29160748/doce_1_246x200px.png', category: 'Zero Açúcar' },
+  { id: 'z1', name: 'Brigadeiro Sabor Morango', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2023/09/22110154/doce_3_246x200px.png', category: 'Zero Açúcar', description: 'Nosso clássico docinho de morango (bicho-de-pé) na versão sem adição de açúcares.' },
+  { id: 'z2', name: 'Beijinho Zero Açúcar', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2023/09/29160750/doce_2_246x200px.png', category: 'Zero Açúcar', description: 'A versão saudável e sem açúcar do nosso amado docinho de coco.' },
+  { id: 'z3', name: 'Brigadeiro Zero Açúcar', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2023/09/29160748/doce_1_246x200px.png', category: 'Zero Açúcar', description: 'Brigadeiro de cacau premium adoçado na medida certa, totalmente zero açúcar.' },
 
   // NUTELLA
-  { id: 'n1', name: 'Brigadeiro Nevado', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2023/11/17152129/Brigadeiro-Nevado-com-Nutella_235x235px.png', category: 'NUTELLA®' },
-  { id: 'n2', name: 'Brigadeiro Crispy', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2023/11/17152127/Brigadeiro-Crispy_235x235px.png', category: 'NUTELLA®' },
-  { id: 'n3', name: 'Bolo Bombom', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2023/11/17152126/Bolo-Bombom-de-Nutella_235x235px.png', category: 'NUTELLA®' },
+  { id: 'n1', name: 'Brigadeiro Nevado', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2023/11/17152129/Brigadeiro-Nevado-com-Nutella_235x235px.png', category: 'NUTELLA®', description: 'Doce branco coberto com leite em pó e recheado com o inconfundível creme NUTELLA®.' },
+  { id: 'n2', name: 'Brigadeiro Crispy', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2023/11/17152127/Brigadeiro-Crispy_235x235px.png', category: 'NUTELLA®', description: 'Brigadeiro envolto em flocos crocantes e recheado com pura NUTELLA®.' },
+  { id: 'n3', name: 'Bolo Bombom', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2023/11/17152126/Bolo-Bombom-de-Nutella_235x235px.png', category: 'NUTELLA®', description: 'Pedaços do nosso bolo de chocolate envoltos em casquinha, recheados com NUTELLA®.' },
 ]
 
 // ==========================================
@@ -139,14 +140,15 @@ function Home({ onChoose }: { onChoose: (category: CategoryId) => void }) {
   )
 }
 
-// NOVA TELA DE DOCES (CARDS E FILTROS)
+// NOVA TELA DE DOCES (CARDS, FILTROS E DESCRIÇÃO FLUTUANTE)
 function DocesViewer({ onBack }: { onBack: () => void }) {
   const [activeCat, setActiveCat] = useState('Todos')
+  const [selectedDoce, setSelectedDoce] = useState<typeof docesList[0] | null>(null)
   
   const filteredDoces = activeCat === 'Todos' ? docesList : docesList.filter(d => d.category === activeCat)
 
   return (
-    <main className="min-h-dvh w-full bg-[#f7f1eb] flex flex-col pb-12">
+    <main className="min-h-dvh w-full bg-[#f7f1eb] flex flex-col pb-12 relative">
       {/* Cabeçalho */}
       <header className="relative bg-white shadow-sm py-8 px-4 flex flex-col items-center">
         <button
@@ -176,12 +178,40 @@ function DocesViewer({ onBack }: { onBack: () => void }) {
       {/* Grid de Cards dos Doces */}
       <div className="px-6 mt-10 max-w-6xl mx-auto w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {filteredDoces.map(doce => (
-          <div key={doce.id} className="bg-white rounded-2xl p-6 flex flex-col items-center justify-between text-center shadow-sm border border-[#e9ddd1] transition hover:-translate-y-1 hover:shadow-md">
+          <button 
+            key={doce.id} 
+            onClick={() => setSelectedDoce(doce)}
+            className="bg-white rounded-2xl p-6 flex flex-col items-center justify-between text-center shadow-sm border border-[#e9ddd1] transition hover:-translate-y-1 hover:shadow-md cursor-pointer w-full"
+          >
             <img src={doce.image} className="w-32 h-32 object-contain mb-4 drop-shadow-sm" alt={doce.name} />
             <h3 className="text-[#4a2e1b] font-bold text-[1.1rem] leading-tight">{doce.name}</h3>
-          </div>
+          </button>
         ))}
       </div>
+
+      {/* JANELA FLUTUANTE (MODAL DE DESCRIÇÃO) */}
+      {selectedDoce && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/40 backdrop-blur-sm p-5 transition-opacity">
+          <div className="relative w-full max-w-sm bg-white rounded-[2rem] p-8 shadow-2xl flex flex-col items-center text-center animate-in fade-in zoom-in-95 duration-200">
+            {/* Botão de Fechar no Modal */}
+            <button
+              onClick={() => setSelectedDoce(null)}
+              className="absolute right-4 top-4 flex size-10 items-center justify-center rounded-full bg-[#f7f1eb] text-[#4a2e1b] transition hover:bg-[#e9ddd1]"
+              aria-label="Fechar descrição"
+            >
+              <X size={20} aria-hidden="true" />
+            </button>
+
+            {/* Conteúdo do Modal */}
+            <img src={selectedDoce.image} alt={selectedDoce.name} className="w-48 h-48 object-contain drop-shadow-md mb-4" />
+            <span className="inline-block mb-3 px-3 py-1 bg-[#fff1dc] text-[#bd7040] text-[10px] font-bold uppercase tracking-widest rounded-full">
+              {selectedDoce.category}
+            </span>
+            <h3 className="font-serif text-2xl font-bold text-[#4a2e1b] mb-3 leading-tight">{selectedDoce.name}</h3>
+            <p className="text-[#9c7d68] text-sm leading-relaxed">{selectedDoce.description}</p>
+          </div>
+        </div>
+      )}
     </main>
   )
 }
