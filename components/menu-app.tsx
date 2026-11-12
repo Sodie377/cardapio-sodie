@@ -13,11 +13,6 @@ import {
 } from 'lucide-react'
 
 // ==========================================
-// DADOS DAS CATEGORIAS EM TELA CHEIA (PÁGINAS)
-// ==========================================
-const pagesBebidas = ['/bebidas1.jpg', '/bebidas2.jpg', '/bebidas3.jpg']
-
-// ==========================================
 // DADOS DA GALERIA DE BOLOS (COMPLETO)
 // ==========================================
 const bolosCategories = ['Todos', 'Chocolate', 'Branco', 'Zero Açúcar', 'Caseiro', 'De Pote']
@@ -282,6 +277,42 @@ const salgadosList = [
 ]
 
 // ==========================================
+// DADOS DA GALERIA DE BEBIDAS
+// ==========================================
+const bebidasCategories = ['Todos', 'Soda Italiana', 'Frozen', 'Mocktail', 'Milkshake', 'Chá Gelado']
+const bebidasIngredients = ['Abacaxi', 'Amora', 'Canela em Pau', 'Cereja', 'Crocante', 'Frutas Vermelhas', 'Hortelã', 'Laranja', 'Limão', 'Limão Siciliano', 'Limão Tahiti', 'Maçã Verde', 'Maracujá', 'Morango', 'NUTELLA®', 'Pêssego', 'Pomelo', 'Xarope de Limão Siciliano', 'Xarope Granadine']
+
+const bebidasList = [
+  // SODA ITALIANA
+  { id: 'beb1', name: 'Soda Italiana Maçã Verde', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/19144250/soda_italiana_maca_verde_325x325.png', category: 'Soda Italiana', description: 'Refrescante soda italiana com sabor marcante de maçã verde.', ingredients: ['Maçã Verde'] },
+  { id: 'beb2', name: 'Soda Italiana Frutas Vermelhas', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/19114903/soda_italiana_frutas_vermelhas_325x325.png', category: 'Soda Italiana', description: 'Refrescante soda italiana com o toque doce e azedinho das frutas vermelhas.', ingredients: ['Frutas Vermelhas'] },
+  { id: 'beb3', name: 'Soda Italiana Abacaxi com Hortelã', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/19114510/soda_italiana_abacaxi_325x325.png', category: 'Soda Italiana', description: 'O sabor tropical do abacaxi com o frescor da hortelã em uma soda super leve.', ingredients: ['Abacaxi', 'Hortelã'] },
+  { id: 'beb4', name: 'Soda Italiana Limão Siciliano', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/19114254/soda_italiana_limao_siciliano_325x325.png', category: 'Soda Italiana', description: 'Refrescante soda italiana clássica de limão siciliano.', ingredients: ['Limão Siciliano'] },
+
+  // FROZEN
+  { id: 'beb5', name: 'Frozen Morango', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/19171317/frozen_morango_325x325.png', category: 'Frozen', description: 'Bebida super gelada e cremosa feita com morangos deliciosos.', ingredients: ['Morango'] },
+  { id: 'beb6', name: 'Frozen Abacaxi', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/19145606/frozen_abacaxi_325x325.png', category: 'Frozen', description: 'Bebida super gelada e refrescante feita com abacaxi.', ingredients: ['Abacaxi'] },
+  { id: 'beb7', name: 'Frozen Frutas Vermelhas', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/19144446/frozen_frutas_vermelhas_325x325.png', category: 'Frozen', description: 'Bebida super gelada e intensa feita com um mix de frutas vermelhas.', ingredients: ['Frutas Vermelhas'] },
+
+  // MOCKTAIL
+  { id: 'beb8', name: 'Mocktail Red Bull Amora Zero Açúcar', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2026/01/08085004/DESTAQUE_RED-BULL-MOCKTAILS-POMELO-ZERO-ACUCAR.png', category: 'Mocktail', description: 'Bebida refrescante e sem açúcar.', ingredients: ['Amora', 'Laranja', 'Limão Siciliano', 'Morango'] },
+  { id: 'beb9', name: 'Mocktail Red Bull Pomelo Zero Açúcar', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2026/01/08085005/DESTAQUE_RED-BULL-MOCKTAILS-AMORA-ZERO-ACUCAR.png', category: 'Mocktail', description: 'Bebida refrescante e sem açúcar.', ingredients: ['Hortelã', 'Limão Tahiti', 'Morango', 'Pomelo'] },
+  { id: 'beb10', name: 'Mocktail Red Bull Zero Açucar', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2025/01/23170007/IMG_8497-1-1.png', category: 'Mocktail', description: 'Bebida refrescante e sem açúcar.', ingredients: ['Canela em Pau', 'Morango'] },
+  { id: 'beb11', name: 'Mocktail Red Bull Energy Drink', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2025/01/23164126/IMG_8506-2-2.png', category: 'Mocktail', description: 'Sabor clássico e refrescante.', ingredients: ['Abacaxi', 'Limão Tahiti', 'Xarope de Limão Siciliano'] },
+  { id: 'beb12', name: 'Mocktail Red Bull Tropical', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2025/01/23165019/IMG_8484-1-1-2.png', category: 'Mocktail', description: 'A energia do Red Bull com um toque tropical.', ingredients: ['Cereja', 'Laranja', 'Limão Tahiti', 'Maracujá', 'Xarope Granadine'] },
+
+  // MILKSHAKE
+  { id: 'beb13', name: 'Milkshake Limão', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/19172358/milkshake_limao_325x325.png', category: 'Milkshake', description: 'Milkshake cremoso.', ingredients: ['Limão'] },
+  { id: 'beb14', name: 'NUTELLA®', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/19173844/milkshake_nutella_325x325.png', category: 'Milkshake', description: 'Milkshake cremoso.', ingredients: ['NUTELLA®'] },
+  { id: 'beb15', name: 'Milkshake Maracujá', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/19172505/milkshake_maracuja_325x325.png', category: 'Milkshake', description: 'Milkshake cremoso.', ingredients: ['Maracujá'] },
+  { id: 'beb16', name: 'Milkshake Crocante', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/19172028/milkshake_crocante_325x325.png', category: 'Milkshake', description: 'Milkshake cremoso.', ingredients: ['Crocante'] },
+
+  // CHÁ GELADO
+  { id: 'beb17', name: 'Chá Gelado Pêssego', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/18174158/cha_limao_pessego_325x325.png', category: 'Chá Gelado', description: 'Refrescante chá gelado.', ingredients: ['Pêssego'] },
+  { id: 'beb18', name: 'Chá Gelado Limão', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/18174158/cha_limao_pessego_325x325.png', category: 'Chá Gelado', description: 'Refrescante chá gelado.', ingredients: ['Limão'] },
+]
+
+// ==========================================
 // CONFIGURAÇÃO GERAL
 // ==========================================
 const categories = [
@@ -290,10 +321,6 @@ const categories = [
   { id: 'salgados', label: 'Salgados', image: '/icone-salgados.png', color: 'bg-[#f8ecd8]' },
   { id: 'bebidas', label: 'Bebidas', image: '/icone-bebidas.png', color: 'bg-[#e9f0e8]' },
 ] as const
-
-const menus = {
-  bebidas: { title: 'Cardápio de Bebidas', pages: pagesBebidas, eyebrow: 'Para acompanhar seu momento', icon: Coffee },
-} as const
 
 type CategoryId = 'bolos' | 'doces' | 'salgados' | 'bebidas'
 
@@ -434,55 +461,6 @@ function GalleryViewer({
 }
 
 // ==========================================
-// TELA CHEIA (APENAS PARA BEBIDAS)
-// ==========================================
-function MenuViewer({ category, onBack }: { category: 'bebidas'; onBack: () => void }) {
-  const menu = menus[category]
-  const [current, setCurrent] = useState(0)
-  const [imageError, setImageError] = useState(false)
-  const touchStart = useRef<number | null>(null)
-
-  const move = (direction: 1 | -1) => {
-    setCurrent((value) => (value + direction + menu.pages.length) % menu.pages.length)
-    setImageError(false)
-  }
-
-  return (
-    <main className="fixed inset-0 z-50 flex h-dvh w-full flex-col bg-[#f7f1eb]">
-      <button onClick={onBack} className="absolute left-4 top-4 z-50 flex size-12 items-center justify-center rounded-full bg-white/90 text-[#4a2e1b] shadow-md backdrop-blur-sm transition hover:bg-white active:scale-95">
-        <ArrowLeft size={24} aria-hidden="true" />
-      </button>
-
-      <section className="relative flex flex-1 items-center justify-center overflow-hidden bg-[#f7f1eb]"
-        onTouchStart={(event) => { touchStart.current = event.changedTouches[0]?.clientX ?? null }}
-        onTouchEnd={(event) => {
-          if (touchStart.current === null) return
-          const distance = event.changedTouches[0]?.clientX - touchStart.current
-          if (Math.abs(distance) > 45) move(distance < 0 ? 1 : -1)
-          touchStart.current = null
-        }}>
-        {!imageError ? (
-          <img src={menu.pages[current]} alt={`Página ${current + 1} do ${menu.title}`} className="h-full w-full object-contain" onError={() => setImageError(true)} />
-        ) : (
-          <div className="flex flex-col items-center justify-center gap-4 text-[#9c7d68]">
-            <div className="flex size-20 items-center justify-center rounded-full bg-white text-[#bd7040] shadow-sm"><menu.icon size={38} strokeWidth={1.5} aria-hidden="true" /></div>
-            <p>Imagem não encontrada</p>
-          </div>
-        )}
-        <button onClick={() => move(-1)} className="absolute left-4 top-1/2 flex size-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-[#4a2e1b] shadow-md backdrop-blur-sm transition hover:bg-white active:scale-90"><ArrowLeft size={24} aria-hidden="true" /></button>
-        <button onClick={() => move(1)} className="absolute right-4 top-1/2 flex size-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-[#4a2e1b] shadow-md backdrop-blur-sm transition hover:bg-white active:scale-90"><ArrowRight size={24} aria-hidden="true" /></button>
-      </section>
-
-      <div className="absolute bottom-6 left-0 right-0 flex items-center justify-center gap-2" role="tablist">
-        {menu.pages.map((_, index) => (
-          <button key={index} type="button" onClick={() => { setCurrent(index); setImageError(false) }} className={`rounded-full shadow-sm transition-all ${index === current ? 'h-2.5 w-7 bg-[#bd7040]' : 'size-2.5 bg-[#dbc3b1] hover:bg-[#bd7040]'}`} aria-label={`Ir para página ${index + 1}`} />
-        ))}
-      </div>
-    </main>
-  )
-}
-
-// ==========================================
 // APP PRINCIPAL (CONTROLE DE ROTAS)
 // ==========================================
 export default function MenuApp() {
@@ -493,6 +471,7 @@ export default function MenuApp() {
   if (category === 'bolos') return <GalleryViewer title="Cardápio de Bolos" filterList={bolosCategories} ingredientList={bolosIngredients} items={bolosList} onBack={() => setCategory(null)} />
   if (category === 'doces') return <GalleryViewer title="Nossos Doces" filterList={docesCategories} ingredientList={docesIngredients} items={docesList} onBack={() => setCategory(null)} />
   if (category === 'salgados') return <GalleryViewer title="Nossos Salgados" filterList={salgadosCategories} ingredientList={salgadosIngredients} items={salgadosList} onBack={() => setCategory(null)} />
+  if (category === 'bebidas') return <GalleryViewer title="Nossas Bebidas" filterList={bebidasCategories} ingredientList={bebidasIngredients} items={bebidasList} onBack={() => setCategory(null)} />
   
-  return <MenuViewer category={category} onBack={() => setCategory(null)} />
+  return null
 }
