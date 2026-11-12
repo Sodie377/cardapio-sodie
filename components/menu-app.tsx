@@ -295,21 +295,42 @@ const bebidasList = [
   { id: 'beb7', name: 'Frozen Frutas Vermelhas', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/19144446/frozen_frutas_vermelhas_325x325.png', category: 'Frozen', description: 'Bebida super gelada e intensa feita com um mix de frutas vermelhas.', ingredients: ['Frutas Vermelhas'] },
 
   // MOCKTAIL
-  { id: 'beb8', name: 'Mocktail Red Bull Amora Zero Açúcar', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2026/01/08085004/DESTAQUE_RED-BULL-MOCKTAILS-POMELO-ZERO-ACUCAR.png', category: 'Mocktail', description: 'Bebida refrescante e sem açúcar.', ingredients: ['Amora', 'Laranja', 'Limão Siciliano', 'Morango'] },
-  { id: 'beb9', name: 'Mocktail Red Bull Pomelo Zero Açúcar', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2026/01/08085005/DESTAQUE_RED-BULL-MOCKTAILS-AMORA-ZERO-ACUCAR.png', category: 'Mocktail', description: 'Bebida refrescante e sem açúcar.', ingredients: ['Hortelã', 'Limão Tahiti', 'Morango', 'Pomelo'] },
-  { id: 'beb10', name: 'Mocktail Red Bull Zero Açucar', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2025/01/23170007/IMG_8497-1-1.png', category: 'Mocktail', description: 'Bebida refrescante e sem açúcar.', ingredients: ['Canela em Pau', 'Morango'] },
-  { id: 'beb11', name: 'Mocktail Red Bull Energy Drink', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2025/01/23164126/IMG_8506-2-2.png', category: 'Mocktail', description: 'Sabor clássico e refrescante.', ingredients: ['Abacaxi', 'Limão Tahiti', 'Xarope de Limão Siciliano'] },
-  { id: 'beb12', name: 'Mocktail Red Bull Tropical', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2025/01/23165019/IMG_8484-1-1-2.png', category: 'Mocktail', description: 'A energia do Red Bull com um toque tropical.', ingredients: ['Cereja', 'Laranja', 'Limão Tahiti', 'Maracujá', 'Xarope Granadine'] },
-
+  
   // MILKSHAKE
-  { id: 'beb13', name: 'Milkshake Limão', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/19172358/milkshake_limao_325x325.png', category: 'Milkshake', description: 'Milkshake cremoso.', ingredients: ['Limão'] },
-  { id: 'beb14', name: 'NUTELLA®', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/19173844/milkshake_nutella_325x325.png', category: 'Milkshake', description: 'Milkshake cremoso.', ingredients: ['NUTELLA®'] },
-  { id: 'beb15', name: 'Milkshake Maracujá', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/19172505/milkshake_maracuja_325x325.png', category: 'Milkshake', description: 'Milkshake cremoso.', ingredients: ['Maracujá'] },
-  { id: 'beb16', name: 'Milkshake Crocante', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/19172028/milkshake_crocante_325x325.png', category: 'Milkshake', description: 'Milkshake cremoso.', ingredients: ['Crocante'] },
-
+ 
   // CHÁ GELADO
-  { id: 'beb17', name: 'Chá Gelado Pêssego', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/18174158/cha_limao_pessego_325x325.png', category: 'Chá Gelado', description: 'Refrescante chá gelado.', ingredients: ['Pêssego'] },
-  { id: 'beb18', name: 'Chá Gelado Limão', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/18174158/cha_limao_pessego_325x325.png', category: 'Chá Gelado', description: 'Refrescante chá gelado.', ingredients: ['Limão'] },
+
+  //CAPPUCCINOS
+  { id: 'beb8', name: 'Cappuccino Alpino', image: '/cappuccino-alpino.png', category: 'Cappuccinos', description: 'A mistura do café espresso com o chocolate de sabor inconfundível Alpino®.', ingredients: ['Morango'] },
+  { id: 'beb9', name: 'Cappuccino', image: '/cappuccino.png', category: 'Cappuccinos', description: 'Café espresso com leite cremoso e uma espuma generosa no topo.', ingredients: ['Morango'] },
+  { id: 'beb10', name: 'Cappuccino com Doce de Leite', image: '/cappuccino-doce.png', category: 'Cappuccinos', description: 'Uma dose de cappuccino cremoso com recheio e borda de Doce de Leite Nestlé®, finalizado com chantilly.', ingredients: ['Abacaxi'] },
+  { id: 'beb11', name: 'Cappuccino Delícia de Leite', image: '/cappuccino-delicia.png', category: 'Cappuccinos', description: 'Cappuccino com borda de Leite Moça®, topo de chantilly e leite Ninho®.', ingredients: ['Frutas Vermelhas'] },
+  { id: 'beb12', name: 'Cappuccino Choc Rosa', image: 'cappuccino-choc.png', category: 'Cappuccinos', description: 'Combinação perfeita entre as coberturas de chocolate e morango com um cappuccino cremoso.', ingredients: ['Morango'] },
+  { id: 'beb13', name: 'Cappuccino Morango com Leite Condensado', image: 'cappuccino-morango.png', category: 'Cappuccinos', description: 'A releitura de um dos bolos mais queridos da Sodiê em forma de bebida com café, borda de Leite Moça®, um toque de morango e finalizado com chantilly cremoso.', ingredients: ['Abacaxi'] },
+  { id: 'beb14', name: 'Cappuccino borda Alpino®', image: '', category: 'Cappuccinos', description: 'Uma dose de cappuccino cremoso com recheio e borda do inconfundível chocolate Alpino®, finalizado com chantilly e uma pitada de cacau.', ingredients: ['Frutas Vermelhas'] },
+  
+  //ACHOCOLATADOS
+  { id: 'beb15', name: 'Achocolatado Kit Kat®', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/19145606/frozen_abacaxi_325x325.png', category: 'Achocolatados', description: 'Achocolatado com sabor único que remete ao sabor da infância.', ingredients: ['Abacaxi'] },
+  { id: 'beb16', name: 'Achocolatado Alpino®', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/19144446/frozen_frutas_vermelhas_325x325.png', category: 'Achocolatados', description: 'Achocolatado super cremoso com sabor único dos Alpes.', ingredients: ['Frutas Vermelhas'] },
+  { id: 'beb16', name: 'Achocolatado Dois Frades®', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/19144446/frozen_frutas_vermelhas_325x325.png', category: 'Achocolatados', description: 'Achocolatado cremoso com sabor mais acentuado de cacau.', ingredients: ['Frutas Vermelhas'] },
+ 
+  //MOCACCINO
+  { id: 'beb17', name: 'Mocaccino Frades®', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/19144446/frozen_frutas_vermelhas_325x325.png', category: 'Mocaccino', description: 'Achocolatado cremoso com sabor mais acentuado de cacau.', ingredients: ['Frutas Vermelhas'] },
+
+  //CAFÉS
+  { id: 'beb18', name: 'Espresso 50 ml', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/19144446/frozen_frutas_vermelhas_325x325.png', category: 'Cafés', description: 'Café consistente e encorpado.', ingredients: ['Frutas Vermelhas'] },
+  { id: 'beb19', name: 'Espresso Curto', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/19144446/frozen_frutas_vermelhas_325x325.png', category: 'Cafés', description: 'Café espresso concentrado.', ingredients: ['Frutas Vermelhas'] },
+  { id: 'beb20', name: 'Espresso Duplo', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/19144446/frozen_frutas_vermelhas_325x325.png', category: 'Cafés', description: 'O espresso em dobro.', ingredients: ['Frutas Vermelhas'] },
+  { id: 'beb21', name: 'Espresso Americano', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/19144446/frozen_frutas_vermelhas_325x325.png', category: 'Cafés', description: 'Café suave e saboroso.', ingredients: ['Frutas Vermelhas'] },
+  { id: 'beb22', name: 'Café com Leite', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/19144446/frozen_frutas_vermelhas_325x325.png', category: 'Cafés', description: 'Café com leite cremoso.', ingredients: ['Frutas Vermelhas'] },
+  { id: 'beb23', name: 'Café com Leite Curto', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/19144446/frozen_frutas_vermelhas_325x325.png', category: 'Cafés', description: 'A versão menor do café com leite cremoso.', ingredients: ['Frutas Vermelhas'] },
+  { id: 'beb24', name: 'Espresso Moça®', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/19144446/frozen_frutas_vermelhas_325x325.png', category: 'Cafés', description: 'Uma dose de espresso com fundo recheado de Leite Moça®.', ingredients: ['Frutas Vermelhas'] },
+
+
+
+
+
+
 ]
 
 // ==========================================
