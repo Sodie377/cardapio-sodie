@@ -1,16 +1,9 @@
 'use client'
 
-import { useRef, useState } from 'react'
-import {
-  ArrowLeft,
-  ArrowRight,
-  CakeSlice,
-  Coffee,
-  Croissant,
-  Cookie,
-  Sparkles,
-  X,
-} from 'lucide-react'
+'use client'
+
+import { useState, useEffect } from 'react'
+import { ArrowLeft, X } from 'lucide-react'
 
 // ==========================================
 // DADOS DA GALERIA DE BOLOS (COMPLETO)
@@ -492,6 +485,39 @@ function GalleryViewer({
 // ==========================================
 export default function MenuApp() {
   const [category, setCategory] = useState<CategoryId | null>(null)
+  
+  // MOTOR PARA MANTER A TELA LIGADA (Wake Lock API)
+  useEffect(() => {
+    let wakeLock: any = null
+
+    const requestWakeLock = async () => {
+      try {
+        if ('wakeLock' in navigator) {
+          wakeLock = await (navigator as any).wakeLock.request('screen')
+        }
+      } catch (err) {
+        console.error('Erro ao tentar manter a tela ligada:', err)
+      }
+    }
+
+    // Solicita que a tela não apague assim que o app abre
+    requestWakeLock()
+
+    // Se o tablet minimizar e voltar, ele pede para não apagar a tela de novo
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'visible') {
+        requestWakeLock()
+      }
+    }
+    document.addEventListener('visibilitychange', handleVisibilityChange)
+
+    return () => {
+      if (wakeLock !== null) {
+        wakeLock.release()
+      }
+      document.removeEventListener('visibilitychange', handleVisibilityChange)
+    }
+  }, [])
   
   if (!category) return <Home onChoose={setCategory} />
   
