@@ -18,7 +18,7 @@ import {
 const bolosCategories = ['Todos', 'Chocolate', 'Branco', 'Zero Açúcar', 'Caseiro', 'De Pote']
 const bolosIngredients = ['Abacaxi', 'Ameixa', 'Amendoim', 'Avelã', 'Baba de Moça', 'Banana', 'Brigadeiro', 'Café', 'Caramelo', 'Castanha-de-Caju', 'Cenoura', 'Cereja', 'Chantilly', 'Chocolate ao Leite', 'Chocolate Branco', 'Chocolate Meio Amargo', 'Coco', 'Cream Cheese', 'Crocante', 'Damasco', 'Doce de Leite', 'Erva Doce', 'Goiabada', 'Kiwi', 'Laranja', 'Leite Condensado', 'Leite Ninho®', 'Limão', 'Manga', 'Maracujá', 'Marshmallow', 'Milho', 'Morango', 'Mousse', 'Nozes', 'Nutella®', 'Paçoca', 'Pêssego', 'Suspiro', 'Uva']
 
-constconst bolosList = [
+const bolosList = [
   // CHOCOLATE
   { id: 'b01', name: 'À Francesa', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2021/09/09092703/01_a_francesa_bolo-chocolate_fatia.png', category: 'Chocolate', description: 'Bolo de chocolate recheado com brigadeiro e cocada, com cobertura de mousse de chocolate.', ingredients: ['Brigadeiro', 'Chocolate ao Leite', 'Coco', 'Mousse'] },
   { id: 'b02', name: 'Aerado', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2021/11/28111000/02_aerado_bolo-chocolate_fatia.png', category: 'Chocolate', description: 'Massa de chocolate, recheio de mousse de chocolate e creme de chocolate branco aerado.', ingredients: ['Cereja', 'Chocolate ao Leite', 'Chocolate Branco', 'Mousse'] },
