@@ -310,21 +310,21 @@ const bebidasList = [
   { id: 'beb14', name: 'Cappuccino Borda Alpino®', image: '/cappuccino-bordaalp.png', category: 'Cappuccinos', description: 'Uma dose de cappuccino cremoso com recheio e borda do inconfundível chocolate Alpino®, finalizado com chantilly e uma pitada de cacau.', ingredients: ['Café', 'Chocolate', 'Cacau', 'Chantilly'] },
   
   //ACHOCOLATADOS
-  { id: 'beb15', name: 'Achocolatado Kit Kat®', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/19145606/frozen_abacaxi_325x325.png', category: 'Achocolatados', description: 'Achocolatado com sabor único que remete ao sabor da infância.', ingredients: ['Chocolate'] },
-  { id: 'beb16', name: 'Achocolatado Alpino®', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/19144446/frozen_frutas_vermelhas_325x325.png', category: 'Achocolatados', description: 'Achocolatado super cremoso com sabor único dos Alpes.', ingredients: ['Chocolate'] },
-  { id: 'beb16b', name: 'Achocolatado Dois Frades®', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/19144446/frozen_frutas_vermelhas_325x325.png', category: 'Achocolatados', description: 'Achocolatado cremoso com sabor mais acentuado de cacau.', ingredients: ['Cacau', 'Leite'] },
+  { id: 'beb15', name: 'Achocolatado Kit Kat®', image: '/achocolatado-kitkat.png', category: 'Achocolatados', description: 'Achocolatado com sabor único que remete ao sabor da infância.', ingredients: ['Chocolate'] },
+  { id: 'beb16', name: 'Achocolatado Alpino®', image: 'achocolatado-alpino.png', category: 'Achocolatados', description: 'Achocolatado super cremoso com sabor único dos Alpes.', ingredients: ['Chocolate'] },
+  { id: 'beb16b', name: 'Achocolatado Dois Frades®', image: 'achocolatado-doisfrades.png', category: 'Achocolatados', description: 'Achocolatado cremoso com sabor mais acentuado de cacau.', ingredients: ['Cacau', 'Leite'] },
  
   //MOCACCINO
-  { id: 'beb17', name: 'Mocaccino Frades®', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/19144446/frozen_frutas_vermelhas_325x325.png', category: 'Mocaccino', description: 'Achocolatado cremoso com sabor mais acentuado de cacau.', ingredients: ['Cacau', 'Café', 'Leite'] },
+  { id: 'beb17', name: 'Mocaccino Frades®', image: '/mocaccino.png', category: 'Mocaccino', description: 'Achocolatado cremoso com sabor mais acentuado de cacau.', ingredients: ['Cacau', 'Café', 'Leite'] },
 
   //CAFÉS
-  { id: 'beb18', name: 'Espresso 50 ml', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/19144446/frozen_frutas_vermelhas_325x325.png', category: 'Cafés', description: 'Café consistente e encorpado.', ingredients: ['Café'] },
-  { id: 'beb19', name: 'Espresso Curto', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/19144446/frozen_frutas_vermelhas_325x325.png', category: 'Cafés', description: 'Café espresso concentrado.', ingredients: ['Café'] },
-  { id: 'beb20', name: 'Espresso Duplo', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/19144446/frozen_frutas_vermelhas_325x325.png', category: 'Cafés', description: 'O espresso em dobro.', ingredients: ['Café'] },
-  { id: 'beb21', name: 'Espresso Americano', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/19144446/frozen_frutas_vermelhas_325x325.png', category: 'Cafés', description: 'Café suave e saboroso.', ingredients: ['Café'] },
-  { id: 'beb22', name: 'Café com Leite', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/19144446/frozen_frutas_vermelhas_325x325.png', category: 'Cafés', description: 'Café com leite cremoso.', ingredients: ['Café', 'Leite'] },
-  { id: 'beb23', name: 'Café com Leite Curto', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/19144446/frozen_frutas_vermelhas_325x325.png', category: 'Cafés', description: 'A versão menor do café com leite cremoso.', ingredients: ['Café', 'Leite'] },
-  { id: 'beb24', name: 'Espresso Moça®', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/19144446/frozen_frutas_vermelhas_325x325.png', category: 'Cafés', description: 'Uma dose de espresso com fundo recheado de Leite Moça®.', ingredients: ['Café', 'Leite Condensado'] },
+  { id: 'beb18', name: 'Espresso 50 ml', image: '/espresso.png', category: 'Cafés', description: 'Café consistente e encorpado.', ingredients: ['Café'] },
+  { id: 'beb19', name: 'Espresso Curto', image: '/espresso-curto.png', category: 'Cafés', description: 'Café espresso concentrado.', ingredients: ['Café'] },
+  { id: 'beb20', name: 'Espresso Duplo', image: '/espresso-duplo.png', category: 'Cafés', description: 'O espresso em dobro.', ingredients: ['Café'] },
+  { id: 'beb21', name: 'Espresso Americano', image: '/espresso-americano.png', category: 'Cafés', description: 'Café suave e saboroso.', ingredients: ['Café'] },
+  { id: 'beb22', name: 'Café com Leite', image: '/cafe-leite.png', category: 'Cafés', description: 'Café com leite cremoso.', ingredients: ['Café', 'Leite'] },
+  { id: 'beb23', name: 'Café com Leite Curto', image: '/cafe-leitecurto.png', category: 'Cafés', description: 'A versão menor do café com leite cremoso.', ingredients: ['Café', 'Leite'] },
+  { id: 'beb24', name: 'Espresso Moça®', image: '/espresso-moca.png', category: 'Cafés', description: 'Uma dose de espresso com fundo recheado de Leite Moça®.', ingredients: ['Café', 'Leite Condensado'] },
 ]
 
 // ==========================================
