@@ -383,6 +383,9 @@ function Home({ onChoose }: { onChoose: (category: CategoryId) => void }) {
 // ==========================================
 // TELA UNIFICADA DE GALERIA (COM FILTRO DUPLO)
 // ==========================================
+// ==========================================
+// TELA UNIFICADA DE GALERIA (COM FILTRO DUPLO)
+// ==========================================
 function GalleryViewer({ 
   title, 
   filterList,
@@ -414,23 +417,33 @@ function GalleryViewer({
         </button>
         <h2 className="text-[#4a2e1b] font-serif text-2xl font-bold mb-6 mt-2 tracking-[-0.03em]">{title}</h2>
         
+        {/* Filtro de Categorias (Formato Pílulas Modernas) */}
         {filterList.length > 0 && (
-          <div className="flex flex-wrap justify-center max-w-4xl border border-[#4a2e1b] rounded-lg overflow-hidden shadow-sm">
+          <div className="flex flex-wrap justify-center gap-2.5 max-w-4xl">
             {filterList.map(cat => (
-              <button key={cat} onClick={() => setActiveCat(cat)} className={`px-5 py-2.5 text-sm font-semibold transition-colors border-r border-[#4a2e1b] last:border-r-0 ${activeCat === cat ? 'bg-[#4a2e1b] text-white' : 'bg-white text-[#4a2e1b] hover:bg-[#f4ebe1]'}`}>
+              <button 
+                key={cat}
+                onClick={() => setActiveCat(cat)}
+                className={`px-5 py-2 text-sm font-bold rounded-full transition-all border
+                  ${activeCat === cat 
+                    ? 'bg-[#4a2e1b] text-white border-[#4a2e1b] shadow-md scale-105' 
+                    : 'bg-white text-[#4a2e1b] border-[#dbc3b1] hover:border-[#4a2e1b] hover:bg-[#f7f1eb]'}`}
+              >
                 {cat}
               </button>
             ))}
           </div>
         )}
 
+        {/* Filtro de Ingredientes (Estilo Combinando) */}
         {ingredientList && ingredientList.length > 0 && (
-          <div className="mt-5 flex items-center justify-center gap-3">
-            <span className="text-sm font-semibold text-[#4a2e1b]">Ingrediente:</span>
+          <div className="mt-6 flex items-center justify-center gap-3 bg-white px-5 py-2 rounded-full border border-[#dbc3b1] shadow-sm">
+            <span className="text-[11px] font-bold text-[#9c7d68] uppercase tracking-widest">Ingrediente</span>
+            <div className="w-px h-4 bg-[#dbc3b1]"></div>
             <select 
               value={activeIng}
               onChange={(e) => setActiveIng(e.target.value)}
-              className="px-3 py-2 rounded-lg border border-[#4a2e1b] bg-[#f7f1eb] text-[#4a2e1b] text-sm font-medium outline-none focus:ring-2 focus:ring-[#bd7040] cursor-pointer"
+              className="bg-transparent text-[#4a2e1b] text-sm font-bold outline-none cursor-pointer pr-4"
             >
               <option value="Todos">Todos</option>
               {ingredientList.map(ing => (
