@@ -489,7 +489,7 @@ function GalleryViewer({
 export default function MenuApp() {
   const [category, setCategory] = useState<CategoryId | null>(null)
   
-  // MOTOR PARA MANTER A TELA LIGADA (Wake Lock API)
+  // MOTOR 1: MANTER A TELA LIGADA (Wake Lock API)
   useEffect(() => {
     let wakeLock: any = null
 
@@ -503,22 +503,42 @@ export default function MenuApp() {
       }
     }
 
-    // Solicita que a tela não apague assim que o app abre
     requestWakeLock()
 
-    // Se o tablet minimizar e voltar, ele pede para não apagar a tela de novo
     const handleVisibilityChange = () => {
-      if (document.visibilityState === 'visible') {
-        requestWakeLock()
-      }
+      if (document.visibilityState === 'visible') requestWakeLock()
     }
     document.addEventListener('visibilitychange', handleVisibilityChange)
 
     return () => {
-      if (wakeLock !== null) {
-        wakeLock.release()
-      }
+      if (wakeLock !== null) wakeLock.release()
       document.removeEventListener('visibilitychange', handleVisibilityChange)
+    }
+  }, [])
+
+  // MOTOR 2: VOLTAR AO INÍCIO APÓS 20 SEG DE INATIVIDADE
+  useEffect(() => {
+    let timeoutId: NodeJS.Timeout
+
+    const resetTimer = () => {
+      clearTimeout(timeoutId)
+      // Configura o timer para 20.000 milissegundos (20 segundos)
+      timeoutId = setTimeout(() => {
+        setCategory(null) // Retorna para a tela principal
+      }, 20000)
+    }
+
+    // Fica de olho em qualquer interação do cliente com o tablet
+    const events = ['touchstart', 'touchmove', 'click', 'scroll']
+    events.forEach(event => document.addEventListener(event, resetTimer, true))
+    
+    // Inicia a contagem logo de cara
+    resetTimer()
+
+    // Limpa a memória quando fechar o app
+    return () => {
+      clearTimeout(timeoutId)
+      events.forEach(event => document.removeEventListener(event, resetTimer, true))
     }
   }, [])
   
