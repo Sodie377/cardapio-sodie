@@ -542,12 +542,32 @@ export default function MenuApp() {
     }
   }, [])
   
-  if (!category) return <Home onChoose={setCategory} />
-  
-  if (category === 'bolos') return <GalleryViewer title="Cardápio de Bolos" filterList={bolosCategories} ingredientList={bolosIngredients} items={bolosList} onBack={() => setCategory(null)} />
-  if (category === 'doces') return <GalleryViewer title="Nossos Doces" filterList={docesCategories} ingredientList={docesIngredients} items={docesList} onBack={() => setCategory(null)} />
-  if (category === 'salgados') return <GalleryViewer title="Nossos Salgados" filterList={salgadosCategories} ingredientList={salgadosIngredients} items={salgadosList} onBack={() => setCategory(null)} />
-  if (category === 'bebidas') return <GalleryViewer title="Nossas Bebidas" filterList={bebidasCategories} ingredientList={bebidasIngredients} items={bebidasList} onBack={() => setCategory(null)} />
-  
-  return null
+  // Trocamos os "if"s soltos por um bloco unificado com animação fluida
+  return (
+    <>
+      {/* 1. Criamos a regra da animação suave (surge deslizando de baixo) */}
+      <style>{`
+        @keyframes surgeSuave {
+          0% { opacity: 0; transform: translateY(15px) scale(0.99); }
+          100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .anima-tela {
+          animation: surgeSuave 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+      `}</style>
+
+      {/* 2. O 'key' faz o React rodar a animação toda vez que a categoria mudar */}
+      <div key={category || 'home'} className="anima-tela w-full min-h-dvh">
+        {!category && <Home onChoose={setCategory} />}
+        
+        {category === 'bolos' && <GalleryViewer title="Cardápio de Bolos" filterList={bolosCategories} ingredientList={bolosIngredients} items={bolosList} onBack={() => setCategory(null)} />}
+        
+        {category === 'doces' && <GalleryViewer title="Nossos Doces" filterList={docesCategories} ingredientList={docesIngredients} items={docesList} onBack={() => setCategory(null)} />}
+        
+        {category === 'salgados' && <GalleryViewer title="Nossos Salgados" filterList={salgadosCategories} ingredientList={salgadosIngredients} items={salgadosList} onBack={() => setCategory(null)} />}
+        
+        {category === 'bebidas' && <GalleryViewer title="Nossas Bebidas" filterList={bebidasCategories} ingredientList={bebidasIngredients} items={bebidasList} onBack={() => setCategory(null)} />}
+      </div>
+    </>
+  )
 }
