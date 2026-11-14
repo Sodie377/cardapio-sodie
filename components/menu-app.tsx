@@ -404,7 +404,10 @@ function GalleryViewer({
   return (
     <main className="min-h-dvh w-full bg-[#f7f1eb] flex flex-col pb-12 relative">
       <header className="relative bg-white shadow-sm py-8 px-4 flex flex-col items-center">
-        <button onClick={onBack} className="absolute left-4 top-4 z-50 flex size-12 items-center justify-center rounded-full bg-[#f7f1eb] text-[#4a2e1b] shadow-sm transition hover:bg-[#e9ddd1] active:scale-95">
+        <button 
+          onClick={onBack} 
+          className="fixed left-4 top-4 z-[100] flex size-12 items-center justify-center rounded-full bg-white/90 backdrop-blur-sm text-[#4a2e1b] shadow-md transition hover:bg-white active:scale-95"
+        >
           <ArrowLeft size={24} aria-hidden="true" />
         </button>
         <h2 className="text-[#4a2e1b] font-serif text-2xl font-bold mb-6 mt-2 tracking-[-0.03em]">{title}</h2>
