@@ -454,6 +454,16 @@ function GalleryViewer({
           <button key={item.id} onClick={() => setSelectedItem(item)} className="bg-white rounded-2xl p-6 flex flex-col items-center justify-between text-center shadow-sm border border-[#e9ddd1] transition hover:-translate-y-1 hover:shadow-md cursor-pointer w-full">
             <img src={item.image} className="w-32 h-32 object-contain mb-4 drop-shadow-sm" alt={item.name} />
             <h3 className="text-[#4a2e1b] font-bold text-[1.1rem] leading-tight">{item.name}</h3>
+            
+            {/* ETIQUETA DE PREÇO NO CARD */}
+            {item.price && (
+              <div className="mt-3">
+                <span className="bg-[#4a2e1b] text-white px-4 py-1.5 rounded-full text-sm font-bold tracking-wide shadow-sm">
+                  {item.price}
+                </span>
+              </div>
+            )}
+            
           </button>
         ))}
         {filteredItems.length === 0 && (
@@ -463,7 +473,7 @@ function GalleryViewer({
         )}
       </div>
 
-      {/* JANELA FLUTUANTE (MODAL DE DESCRIÇÃO) */}
+      {/* JANELA FLUTUANTE (MODAL DE DESCRIÇÃO E PREÇO) */}
       {selectedItem && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/40 backdrop-blur-sm p-5 transition-opacity">
           <div className="relative w-full max-w-sm bg-white rounded-[2rem] p-8 shadow-2xl flex flex-col items-center text-center animate-in fade-in zoom-in-95 duration-200">
@@ -475,6 +485,16 @@ function GalleryViewer({
             <span className="inline-block mb-3 px-3 py-1 bg-[#fff1dc] text-[#bd7040] text-[10px] font-bold uppercase tracking-widest rounded-full">{selectedItem.category}</span>
             
             <h3 className="font-serif text-2xl font-bold text-[#4a2e1b] mb-3 leading-tight">{selectedItem.name}</h3>
+            
+            {/* ETIQUETA DE PREÇO NA JANELA FLUTUANTE */}
+            {selectedItem.price && (
+              <div className="mb-4">
+                <span className="bg-[#4a2e1b] text-white px-5 py-2 rounded-full text-lg font-bold tracking-wide shadow-md">
+                  {selectedItem.price}
+                </span>
+              </div>
+            )}
+            
             <p className="text-[#9c7d68] text-sm leading-relaxed">{selectedItem.description}</p>
           </div>
         </div>
