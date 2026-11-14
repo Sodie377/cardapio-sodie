@@ -2,7 +2,7 @@
 
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { ArrowLeft, X } from 'lucide-react'
 
 // ==========================================
@@ -486,8 +486,56 @@ function GalleryViewer({
 // ==========================================
 // APP PRINCIPAL (CONTROLE DE ROTAS)
 // ==========================================
+// ==========================================
+// TELA DE DESCANSO (VÍDEO ÚNICO DO CANVA)
+// ==========================================
+function Screensaver({ onWakeUp }: { onWakeUp: () => void }) {
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  const handleLoadedMetadata = () => {
+    if (videoRef.current) {
+      const duration = videoRef.current.duration
+      // Sorteia um tempo aleatório para o vídeo começar
+      const randomStart = Math.random() * duration
+      videoRef.current.currentTime = randomStart
+    }
+  }
+
+  return (
+    <div 
+      className="fixed inset-0 z-[200] flex items-end justify-center bg-black cursor-pointer transition-opacity duration-500"
+      onClick={onWakeUp}
+    >
+      <video 
+        ref={videoRef}
+        src="/home.mp4" 
+        autoPlay 
+        loop 
+        muted 
+        playsInline
+        onLoadedMetadata={handleLoadedMetadata}
+        className="absolute inset-0 w-full h-full object-cover opacity-90"
+      />
+      
+      {/* Degradê escuro na base para dar leitura ao botão */}
+      <div className="absolute inset-0 bg-gradient-to-t from-[#4a2e1b]/95 via-transparent to-transparent pointer-events-none"></div>
+
+      {/* Botão flutuante que fica pulsando para chamar atenção */}
+      <div className="relative z-10 mb-24 flex flex-col items-center animate-bounce">
+        <span className="bg-[#4a2e1b] text-white px-10 py-5 rounded-full text-2xl font-bold shadow-[0_0_30px_rgba(0,0,0,0.5)] border-2 border-[#dbc3b1] tracking-wide uppercase">
+          Toque na tela para começar
+        </span>
+      </div>
+    </div>
+  )
+}
+
+// ==========================================
+// APP PRINCIPAL (CONTROLE DE ROTAS E INATIVIDADE)
+// ==========================================
 export default function MenuApp() {
   const [category, setCategory] = useState<CategoryId | null>(null)
+  const [isIdle, setIsIdle] = useState(true) // Começa mostrando o vídeo!
   
   // MOTOR 1: MANTER A TELA LIGADA (Wake Lock API)
   useEffect(() => {
@@ -516,49 +564,52 @@ export default function MenuApp() {
     }
   }, [])
 
-  // MOTOR 2: VOLTAR AO INÍCIO APÓS 20 SEG DE INATIVIDADE
+  // MOTOR 2: VOLTAR AO VÍDEO APÓS 20 SEG DE INATIVIDADE
   useEffect(() => {
     let timeoutId: NodeJS.Timeout
 
-    const resetTimer = () => {
+    const startIdleTimer = () => {
       clearTimeout(timeoutId)
-      // Configura o timer para 20.000 milissegundos (20 segundos)
       timeoutId = setTimeout(() => {
-        setCategory(null) // Retorna para a tela principal
+        setCategory(null) // Volta pro menu principal
+        setIsIdle(true)   // Ativa a tela do vídeo
       }, 20000)
+    }
+
+    const wakeUp = () => {
+      setIsIdle(false)
+      startIdleTimer()
     }
 
     // Fica de olho em qualquer interação do cliente com o tablet
     const events = ['touchstart', 'touchmove', 'click', 'scroll']
-    events.forEach(event => document.addEventListener(event, resetTimer, true))
+    events.forEach(event => document.addEventListener(event, wakeUp, true))
     
-    // Inicia a contagem logo de cara
-    resetTimer()
+    startIdleTimer()
 
-    // Limpa a memória quando fechar o app
     return () => {
       clearTimeout(timeoutId)
-      events.forEach(event => document.removeEventListener(event, resetTimer, true))
+      events.forEach(event => document.removeEventListener(event, wakeUp, true))
     }
   }, [])
   
-  // Trocamos os "if"s soltos por um bloco unificado com animação fluida
   return (
     <>
-      {/* 1. Criamos a regra da animação suave (surge deslizando de baixo) */}
-      {/* 1. Criamos a regra da animação suave (surge deslizando de baixo) */}
+      {/* Se estiver inativo, mostra o vídeo por cima de tudo */}
+      {isIdle && <Screensaver onWakeUp={() => setIsIdle(false)} />}
+
+      {/* Regra da animação suave para a troca de telas do cardápio */}
       <style>{`
         @keyframes surgeSuave {
           0% { opacity: 0; transform: translateY(15px) scale(0.99); }
           100% { opacity: 1; transform: none; }
         }
         .anima-tela {
-          /* ATENÇÃO: Removemos a palavra 'forwards' daqui do final! */
           animation: surgeSuave 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
       `}</style>
 
-      {/* 2. O 'key' faz o React rodar a animação toda vez que a categoria mudar */}
+      {/* Navegação principal do app */}
       <div key={category || 'home'} className="anima-tela w-full min-h-dvh">
         {!category && <Home onChoose={setCategory} />}
         
