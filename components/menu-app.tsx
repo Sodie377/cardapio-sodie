@@ -546,10 +546,11 @@ export default function MenuApp() {
   return (
     <>
       {/* 1. Criamos a regra da animação suave (surge deslizando de baixo) */}
+      {/* 1. Criamos a regra da animação suave (surge deslizando de baixo) */}
       <style>{`
         @keyframes surgeSuave {
           0% { opacity: 0; transform: translateY(15px) scale(0.99); }
-          100% { opacity: 1; transform: translateY(0) scale(1); }
+          100% { opacity: 1; transform: none; }
         }
         .anima-tela {
           animation: surgeSuave 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
