@@ -521,7 +521,7 @@ function Screensaver({ onWakeUp }: { onWakeUp: () => void }) {
       <div className="absolute inset-0 bg-gradient-to-t from-[#4a2e1b]/95 via-transparent to-transparent pointer-events-none"></div>
 
       {/* Botão flutuante que fica pulsando para chamar atenção */}
-      <div className="relative z-10 mb-24 flex flex-col items-center animate-bounce">
+      <div className="relative z-10 mb-12 flex flex-col items-center animate-bounce">
         <span className="bg-[#4a2e1b] text-white px-10 py-5 rounded-full text-2xl font-bold shadow-[0_0_30px_rgba(0,0,0,0.5)] border-2 border-[#dbc3b1] tracking-wide uppercase">
           Toque na tela para começar
         </span>
