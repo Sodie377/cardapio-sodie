@@ -553,7 +553,8 @@ export default function MenuApp() {
           100% { opacity: 1; transform: none; }
         }
         .anima-tela {
-          animation: surgeSuave 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+          /* ATENÇÃO: Removemos a palavra 'forwards' daqui do final! */
+          animation: surgeSuave 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
       `}</style>
 
