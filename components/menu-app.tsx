@@ -276,15 +276,15 @@ const bebidasIngredients = ['Abacaxi', 'Cacau', 'Café', 'Chantilly', 'Chocolate
 
 const bebidasList = [
   // SODA ITALIANA
-  { id: 'beb1', name: 'Soda Italiana Maçã Verde', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/19144250/soda_italiana_maca_verde_325x325.png', category: 'Soda Italiana', description: 'Refrescante soda italiana com sabor marcante de maçã verde.', ingredients: ['Maçã Verde'] },
-  { id: 'beb2', name: 'Soda Italiana Frutas Vermelhas', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/19114903/soda_italiana_frutas_vermelhas_325x325.png', category: 'Soda Italiana', description: 'Refrescante soda italiana com o toque doce e azedinho das frutas vermelhas.', ingredients: ['Frutas Vermelhas'] },
-  { id: 'beb3', name: 'Soda Italiana Abacaxi com Hortelã', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/19114510/soda_italiana_abacaxi_325x325.png', category: 'Soda Italiana', description: 'O sabor tropical do abacaxi com o frescor da hortelã em uma soda super leve.', ingredients: ['Abacaxi', 'Hortelã'] },
-  { id: 'beb4', name: 'Soda Italiana Limão Siciliano', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/19114254/soda_italiana_limao_siciliano_325x325.png', category: 'Soda Italiana', description: 'Refrescante soda italiana clássica de limão siciliano.', ingredients: ['Limão Siciliano'] },
+  { id: 'beb1', name: 'Soda Italiana Maçã Verde', price: 'R$15,00', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/19144250/soda_italiana_maca_verde_325x325.png', category: 'Soda Italiana', description: 'Refrescante soda italiana com sabor marcante de maçã verde.', ingredients: ['Maçã Verde'] },
+  { id: 'beb2', name: 'Soda Italiana Frutas Vermelhas', price: 'R$15,00', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/19114903/soda_italiana_frutas_vermelhas_325x325.png', category: 'Soda Italiana', description: 'Refrescante soda italiana com o toque doce e azedinho das frutas vermelhas.', ingredients: ['Frutas Vermelhas'] },
+  { id: 'beb3', name: 'Soda Italiana Abacaxi com Hortelã', price: 'R$15,00', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/19114510/soda_italiana_abacaxi_325x325.png', category: 'Soda Italiana', description: 'O sabor tropical do abacaxi com o frescor da hortelã em uma soda super leve.', ingredients: ['Abacaxi', 'Hortelã'] },
+  { id: 'beb4', name: 'Soda Italiana Limão Siciliano', price: 'R$15,00', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/19114254/soda_italiana_limao_siciliano_325x325.png', category: 'Soda Italiana', description: 'Refrescante soda italiana clássica de limão siciliano.', ingredients: ['Limão Siciliano'] },
 
   // FROZEN
-  { id: 'beb5', name: 'Frozen Morango', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/19171317/frozen_morango_325x325.png', category: 'Frozen', description: 'Bebida super gelada e cremosa feita com morangos deliciosos.', ingredients: ['Morango'] },
-  { id: 'beb6', name: 'Frozen Abacaxi', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/19145606/frozen_abacaxi_325x325.png', category: 'Frozen', description: 'Bebida super gelada e refrescante feita com abacaxi.', ingredients: ['Abacaxi'] },
-  { id: 'beb7', name: 'Frozen Frutas Vermelhas', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/19144446/frozen_frutas_vermelhas_325x325.png', category: 'Frozen', description: 'Bebida super gelada e intensa feita com um mix de frutas vermelhas.', ingredients: ['Frutas Vermelhas'] },
+  { id: 'beb5', name: 'Frozen Morango', price: 'R$19,90', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/19171317/frozen_morango_325x325.png', category: 'Frozen', description: 'Bebida super gelada e cremosa feita com morangos deliciosos.', ingredients: ['Morango'] },
+  { id: 'beb6', name: 'Frozen Abacaxi', price: 'R$19,90', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/19145606/frozen_abacaxi_325x325.png', category: 'Frozen', description: 'Bebida super gelada e refrescante feita com abacaxi.', ingredients: ['Abacaxi'] },
+  { id: 'beb7', name: 'Frozen Frutas Vermelhas', price: 'R$19,90', image: 'https://cdn.sodiedoces.com.br/wp-content/uploads/2024/01/19144446/frozen_frutas_vermelhas_325x325.png', category: 'Frozen', description: 'Bebida super gelada e intensa feita com um mix de frutas vermelhas.', ingredients: ['Frutas Vermelhas'] },
 
   // MOCKTAIL
   
@@ -293,30 +293,30 @@ const bebidasList = [
   // CHÁ GELADO
 
   //CAPPUCCINOS
-  { id: 'beb8', name: 'Cappuccino Alpino', image: '/cappuccino-alpino.png', category: 'Cappuccinos', description: 'A mistura do café espresso com o chocolate de sabor inconfundível Alpino®.', ingredients: ['Café', 'Chocolate'] },
-  { id: 'beb9', name: 'Cappuccino', image: '/cappuccino.png', category: 'Cappuccinos', description: 'Café espresso com leite cremoso e uma espuma generosa no topo.', ingredients: ['Café', 'Leite'] },
-  { id: 'beb10', name: 'Cappuccino com Doce de Leite', image: '/cappuccino-doce.png', category: 'Cappuccinos', description: 'Uma dose de cappuccino cremoso com recheio e borda de Doce de Leite Nestlé®, finalizado com chantilly.', ingredients: ['Café', 'Doce de Leite', 'Chantilly'] },
-  { id: 'beb11', name: 'Cappuccino Delícia de Leite', image: '/cappuccino-delicia.png', category: 'Cappuccinos', description: 'Cappuccino com borda de Leite Moça®, topo de chantilly e leite Ninho®.', ingredients: ['Café', 'Leite Condensado', 'Chantilly', 'Leite Ninho®'] },
-  { id: 'beb12', name: 'Cappuccino Choc Rosa', image: '/cappuccino-choc.png', category: 'Cappuccinos', description: 'Combinação perfeita entre as coberturas de chocolate e morango com um cappuccino cremoso.', ingredients: ['Café', 'Chocolate', 'Morango'] },
-  { id: 'beb13', name: 'Cappuccino Morango com Leite Condensado', image: '/cappuccino-morango.png', category: 'Cappuccinos', description: 'A releitura de um dos bolos mais queridos da Sodiê em forma de bebida com café, borda de Leite Moça®, um toque de morango e finalizado com chantilly cremoso.', ingredients: ['Café', 'Leite Condensado', 'Morango', 'Chantilly'] },
-  { id: 'beb14', name: 'Cappuccino Borda Alpino®', image: '/cappuccino-bordaalp.png', category: 'Cappuccinos', description: 'Uma dose de cappuccino cremoso com recheio e borda do inconfundível chocolate Alpino®, finalizado com chantilly e uma pitada de cacau.', ingredients: ['Café', 'Chocolate', 'Cacau', 'Chantilly'] },
+  { id: 'beb8', name: 'Cappuccino Alpino', price: 'R$17,50', image: '/cappuccino-alpino.png', category: 'Cappuccinos', description: 'A mistura do café espresso com o chocolate de sabor inconfundível Alpino®.', ingredients: ['Café', 'Chocolate'] },
+  { id: 'beb9', name: 'Cappuccino', price: 'R$17,50', image: '/cappuccino.png', category: 'Cappuccinos', description: 'Café espresso com leite cremoso e uma espuma generosa no topo.', ingredients: ['Café', 'Leite'] },
+  { id: 'beb10', name: 'Cappuccino com Doce de Leite', price: 'R$17,50', image: '/cappuccino-doce.png', category: 'Cappuccinos', description: 'Uma dose de cappuccino cremoso com recheio e borda de Doce de Leite Nestlé®, finalizado com chantilly.', ingredients: ['Café', 'Doce de Leite', 'Chantilly'] },
+  { id: 'beb11', name: 'Cappuccino Delícia de Leite', price: 'R$17,50', image: '/cappuccino-delicia.png', category: 'Cappuccinos', description: 'Cappuccino com borda de Leite Moça®, topo de chantilly e leite Ninho®.', ingredients: ['Café', 'Leite Condensado', 'Chantilly', 'Leite Ninho®'] },
+  { id: 'beb12', name: 'Cappuccino Choc Rosa', price: 'R$17,50', image: '/cappuccino-choc.png', category: 'Cappuccinos', description: 'Combinação perfeita entre as coberturas de chocolate e morango com um cappuccino cremoso.', ingredients: ['Café', 'Chocolate', 'Morango'] },
+  { id: 'beb13', name: 'Cappuccino Morango com Leite Condensado', price: 'R$17,50', image: '/cappuccino-morango.png', category: 'Cappuccinos', description: 'A releitura de um dos bolos mais queridos da Sodiê em forma de bebida com café, borda de Leite Moça®, um toque de morango e finalizado com chantilly cremoso.', ingredients: ['Café', 'Leite Condensado', 'Morango', 'Chantilly'] },
+  { id: 'beb14', name: 'Cappuccino Borda Alpino®', price: 'R$17,50', image: '/cappuccino-bordaalp.png', category: 'Cappuccinos', description: 'Uma dose de cappuccino cremoso com recheio e borda do inconfundível chocolate Alpino®, finalizado com chantilly e uma pitada de cacau.', ingredients: ['Café', 'Chocolate', 'Cacau', 'Chantilly'] },
   
   //ACHOCOLATADOS
-  { id: 'beb15', name: 'Achocolatado Kit Kat®', image: '/achocolatado-kitkat.png', category: 'Achocolatados', description: 'Achocolatado com sabor único que remete ao sabor da infância.', ingredients: ['Chocolate'] },
-  { id: 'beb16', name: 'Achocolatado Alpino®', image: 'achocolatado-alpino.png', category: 'Achocolatados', description: 'Achocolatado super cremoso com sabor único dos Alpes.', ingredients: ['Chocolate'] },
-  { id: 'beb16b', name: 'Achocolatado Dois Frades®', image: 'achocolatado-doisfrades.png', category: 'Achocolatados', description: 'Achocolatado cremoso com sabor mais acentuado de cacau.', ingredients: ['Cacau', 'Leite'] },
+  { id: 'beb15', name: 'Achocolatado Kit Kat®', price: 'R$12,50', image: '/achocolatado-kitkat.png', category: 'Achocolatados', description: 'Achocolatado com sabor único que remete ao sabor da infância.', ingredients: ['Chocolate'] },
+  { id: 'beb16', name: 'Achocolatado Alpino®', price: 'R$12,50',  image: 'achocolatado-alpino.png', category: 'Achocolatados', description: 'Achocolatado super cremoso com sabor único dos Alpes.', ingredients: ['Chocolate'] },
+  { id: 'beb16b', name: 'Achocolatado Dois Frades®', price: 'R$12,50', image: 'achocolatado-doisfrades.png', category: 'Achocolatados', description: 'Achocolatado cremoso com sabor mais acentuado de cacau.', ingredients: ['Cacau', 'Leite'] },
  
   //MOCACCINO
-  { id: 'beb17', name: 'Mocaccino Frades®', image: '/mocaccino.png', category: 'Mocaccino', description: 'Achocolatado cremoso com sabor mais acentuado de cacau.', ingredients: ['Cacau', 'Café', 'Leite'] },
+  { id: 'beb17', name: 'Mocaccino Frades®', price: 'R$14,50', image: '/mocaccino.png', category: 'Mocaccino', description: 'Achocolatado cremoso com sabor mais acentuado de cacau.', ingredients: ['Cacau', 'Café', 'Leite'] },
 
   //CAFÉS
-  { id: 'beb18', name: 'Espresso 50 ml', image: '/espresso.png', category: 'Cafés', description: 'Café consistente e encorpado.', ingredients: ['Café'] },
-  { id: 'beb19', name: 'Espresso Curto', image: '/espresso-curto.png', category: 'Cafés', description: 'Café espresso concentrado.', ingredients: ['Café'] },
-  { id: 'beb20', name: 'Espresso Duplo', image: '/espresso-duplo.png', category: 'Cafés', description: 'O espresso em dobro.', ingredients: ['Café'] },
-  { id: 'beb21', name: 'Espresso Americano', image: '/espresso-americano.png', category: 'Cafés', description: 'Café suave e saboroso.', ingredients: ['Café'] },
-  { id: 'beb22', name: 'Café com Leite', image: '/cafe-leite.png', category: 'Cafés', description: 'Café com leite cremoso.', ingredients: ['Café', 'Leite'] },
-  { id: 'beb23', name: 'Café com Leite Curto', image: '/cafe-leitecurto.png', category: 'Cafés', description: 'A versão menor do café com leite cremoso.', ingredients: ['Café', 'Leite'] },
-  { id: 'beb24', name: 'Espresso Moça®', image: '/espresso-moca.png', category: 'Cafés', description: 'Uma dose de espresso com fundo recheado de Leite Moça®.', ingredients: ['Café', 'Leite Condensado'] },
+  { id: 'beb18', name: 'Espresso 50 ml', price: 'R$9,00', image: '/espresso.png', category: 'Cafés', description: 'Café consistente e encorpado.', ingredients: ['Café'] },
+  { id: 'beb19', name: 'Espresso Curto', price: 'R$9,00', image: '/espresso-curto.png', category: 'Cafés', description: 'Café espresso concentrado.', ingredients: ['Café'] },
+  { id: 'beb20', name: 'Espresso Duplo', price: 'R$10,50', image: '/espresso-duplo.png', category: 'Cafés', description: 'O espresso em dobro.', ingredients: ['Café'] },
+  { id: 'beb21', name: 'Espresso Americano', price: 'R$10,50', image: '/espresso-americano.png', category: 'Cafés', description: 'Café suave e saboroso.', ingredients: ['Café'] },
+  { id: 'beb22', name: 'Café com Leite', price: 'R$12,50', image: '/cafe-leite.png', category: 'Cafés', description: 'Café com leite cremoso.', ingredients: ['Café', 'Leite'] },
+  { id: 'beb23', name: 'Café com Leite Curto', price: 'R$10,50', image: '/cafe-leitecurto.png', category: 'Cafés', description: 'A versão menor do café com leite cremoso.', ingredients: ['Café', 'Leite'] },
+  { id: 'beb24', name: 'Espresso Moça®', price: 'R$11,00', image: '/espresso-moca.png', category: 'Cafés', description: 'Uma dose de espresso com fundo recheado de Leite Moça®.', ingredients: ['Café', 'Leite Condensado'] },
 ]
 
 // ==========================================
